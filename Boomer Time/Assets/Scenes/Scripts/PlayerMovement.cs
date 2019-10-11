@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public float verticalSpeed;
     public bool canMove = true;
     public int acceleration;
+    public Vector2 maxVelo;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +25,11 @@ public class PlayerMovement : MonoBehaviour
             horizontalSpeed = Input.GetAxis("Mouse X");
             verticalSpeed = Input.GetAxis("Mouse Y");
         }
-        rb.AddForce()
+
+        if (rb.velocity.sqrMagnitude < maxVelo.sqrMagnitude)
+        {
+            rb.AddForce(new Vector2(horizontalSpeed, verticalSpeed));
+        }
 
     
     }
