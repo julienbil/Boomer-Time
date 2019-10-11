@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (rb.velocity.sqrMagnitude < maxVelo.sqrMagnitude)
         {
-            rb.AddForce(new Vector2(horizontalSpeed, verticalSpeed));
+            rb.AddForce(new Vector2(horizontalSpeed*speed/100, verticalSpeed*speed/100));
         }
 
     
