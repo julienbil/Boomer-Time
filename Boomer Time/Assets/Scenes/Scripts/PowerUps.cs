@@ -9,10 +9,13 @@ public class PowerUps : MonoBehaviour
     public bool isLawnmower;
     public bool isTruck;
     public bool isNormal;
+    public AudioSource source;
+    public AudioClip clip;
 
     // Start is called before the first frame update
     void Start()
     {
+        source.clip = clip;
         playmov = gameObject.GetComponent<PlayerMovement>();
     }
 
@@ -29,25 +32,21 @@ public class PowerUps : MonoBehaviour
         Destroy(other.gameObject);
     }
 
+    IEnumerator Transforming()
+    {
+        source.Play();
+        Time.timeScale = 0;
+        playmov.canMove = false;
+        yield return new WaitForSecondsRealtime(0.5f);
+        playmov.canMove = true;
+        Time.timeScale = 1;
+    }
 
     void TurnIntoLawnmower()
     {
-        temp = gameObject.GetComponent<SpriteRenderer>().sprite;
-  
-        IEnumerator TransformLawnmower()
-        {
-            gameObject.GetComponent<SpriteRenderer>().sprite = truck;
-            yield return new WaitForSecondsRealtime(0.1f);
-            gameObject.GetComponent<SpriteRenderer>().sprite = temp;
-            yield return new WaitForSecondsRealtime(0.1f);
-            gameObject.GetComponent<SpriteRenderer>().sprite = truck;
-            yield return new WaitForSecondsRealtime(0.1f);
-            gameObject.GetComponent<SpriteRenderer>().sprite = temp;
-            yield return new WaitForSecondsRealtime(0.1f);
-            gameObject.GetComponent<SpriteRenderer>().sprite = truck;
-            yield return new WaitForSecondsRealtime(0.1f);
-        }
         StopAllCoroutines();
+        StartCoroutine(Transforming());
+        gameObject.GetComponent<SpriteRenderer>().sprite = lawnmower;
         TurnIntoBoomer();
         IEnumerator BeLawnmower()
         {
@@ -62,29 +61,9 @@ public class PowerUps : MonoBehaviour
 
     void TurnIntoTruck()
     {
-        temp = gameObject.GetComponent<SpriteRenderer>().sprite;
-        IEnumerator Transforming()
-        {
-            Time.timeScale = 0;
-            yield return new WaitForSecondsRealtime(0.5f);
-            Time.timeScale = 1;
-        }
-        IEnumerator TransformTruck()
-        {
-            gameObject.GetComponent<SpriteRenderer>().sprite = truck;
-            yield return new WaitForSecondsRealtime(0.1f);
-            gameObject.GetComponent<SpriteRenderer>().sprite = temp;
-            yield return new WaitForSecondsRealtime(0.1f);
-            gameObject.GetComponent<SpriteRenderer>().sprite = truck;
-            yield return new WaitForSecondsRealtime(0.1f);
-            gameObject.GetComponent<SpriteRenderer>().sprite = temp;
-            yield return new WaitForSecondsRealtime(0.1f);
-            gameObject.GetComponent<SpriteRenderer>().sprite = truck;
-            yield return new WaitForSecondsRealtime(0.1f);
-        }
         StopAllCoroutines();
-        StartCoroutine(TransformTruck());
         StartCoroutine(Transforming());
+        gameObject.GetComponent<SpriteRenderer>().sprite = truck;
         TurnIntoBoomer();
         IEnumerator BeTruck()
         {

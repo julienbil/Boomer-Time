@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
             verticalSpeed = Input.GetAxis("Vertical");
         }
 
-        if (rb.velocity.sqrMagnitude < maxVelo.sqrMagnitude)
+        if (rb.velocity.sqrMagnitude < maxVelo.sqrMagnitude && canMove)
         {
             rb.AddForce(new Vector2(horizontalSpeed*speed/100, verticalSpeed*speed/100));
         }
