@@ -49,7 +49,7 @@ public class startMenu : MonoBehaviour
         {
             case 1:
               gameIsStarted = true;
-              SceneManager.LoadScene("Scene2P");
+              SceneManager.LoadScene("Scene1P");
                 break;
             case 2:
                 gameIsStarted = true;
