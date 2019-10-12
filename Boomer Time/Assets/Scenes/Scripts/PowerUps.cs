@@ -7,15 +7,18 @@ public class PowerUps : MonoBehaviour
     public Sprite player, lawnmower, truck, temp;
     public PlayerMovement playmov;
     public bool isLawnmower;
+    public PlayerWeapon pWeapon;
     public bool isTruck;
     public bool isNormal;
     public AudioSource source;
-    public AudioClip clip;
+    public AudioClip powerupsound;
 
     // Start is called before the first frame update
     void Start()
     {
-        source.clip = clip;
+        pWeapon = gameObject.GetComponent<PlayerWeapon>();
+        source = GameObject.FindGameObjectWithTag("SoundManager").GetComponent<AudioSource>();
+        source.clip = powerupsound;
         playmov = gameObject.GetComponent<PlayerMovement>();
     }
 
@@ -29,6 +32,10 @@ public class PowerUps : MonoBehaviour
         {
             TurnIntoTruck();
         }
+        if (other.name == "Baseball Pup")
+        {
+            EquipWeapon(other.GetComponent<Weapon>().weaponname);
+        }
         Destroy(other.gameObject);
     }
 
@@ -40,6 +47,39 @@ public class PowerUps : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.5f);
         playmov.canMove = true;
         Time.timeScale = 1;
+    }
+
+    void EquipWeapon(string weaponname)
+    {
+        UnequipWeapon(pWeapon.currentWeapon);
+        if (weaponname == "Baseball")
+        {
+            pWeapon.currentWeapon = "Baseball";
+            pWeapon.baseball.SetActive(true);
+        }
+        //if (weaponname == "Torch")
+        //{
+        //    pWeapon.currentWeapon = "Torch";
+        //    pWeapon.torch.SetActive(true);
+        //}
+        //if (weaponname == "Golden Hammer")
+        //{
+        //    pWeapon.currentWeapon = "Golden Hammer";
+        //    pWeapon.goldenhammer.SetActive(true);
+        //}
+    }
+
+    void UnequipWeapon(string weaponname)
+    {
+        if (weaponname == "Baseball")
+        {
+            pWeapon.currentWeapon = "None";
+            pWeapon.baseball.SetActive(false);
+        }
+        if (weaponname == "None")
+        {
+            return;
+        }
     }
 
     void TurnIntoLawnmower()
