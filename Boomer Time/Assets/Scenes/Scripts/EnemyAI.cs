@@ -20,14 +20,18 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        foreach(GameObject player in liste)
+        if (liste != null)
         {
-            float distActuelle = Mathf.Sqrt((Mathf.Pow(player.GetComponent<Transform>().transform.position.x, 2)) + (Mathf.Pow(player.GetComponent<Transform>().transform.position.y, 2)));
-            float distTarget = Mathf.Sqrt((Mathf.Pow(target.transform.position.x - this.transform.position.x, 2)) + (Mathf.Pow(target.transform.position.y- this.transform.position.y, 2)));
-            if (distActuelle < distTarget)
-                target = player.GetComponent<Transform>();
-        }
+            foreach(GameObject player in liste)
+                    {
+                        float distActuelle = Mathf.Sqrt((Mathf.Pow(player.GetComponent<Transform>().transform.position.x, 2)) + (Mathf.Pow(player.GetComponent<Transform>().transform.position.y, 2)));
+                        float distTarget = Mathf.Sqrt((Mathf.Pow(target.transform.position.x - this.transform.position.x, 2)) + (Mathf.Pow(target.transform.position.y- this.transform.position.y, 2)));
+                        if (distActuelle < distTarget)
+                            target = player.GetComponent<Transform>();
+                    }
             
-        transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+                    transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        }
+        
     }
 }

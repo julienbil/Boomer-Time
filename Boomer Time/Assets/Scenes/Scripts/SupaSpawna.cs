@@ -5,8 +5,8 @@ using UnityEngine;
 public class SupaSpawna : MonoBehaviour
 {
     public GameObject enemy;
-    public float cd=0,lastSpawn=0;
-    public int maxY = 3, minY = -3, xPos = 11, minCD = 1, maxCD = 3, enemyMin=1, enemyMax=10;
+    public float cd=0,lastSpawn=0, xPos = 11;
+    public int maxY = 3, minY = -3, minCD = 1, maxCD = 3, enemyMin=1, enemyMax=10;
 
     // Start is called before the first frame update
     void Start()
