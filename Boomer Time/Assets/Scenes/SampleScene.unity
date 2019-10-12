@@ -130,9 +130,10 @@ GameObject:
   m_Component:
   - component: {fileID: 330043318}
   - component: {fileID: 330043317}
+  - component: {fileID: 330043319}
   m_Layer: 0
   m_Name: LawnMower Pup
-  m_TagString: Untagged
+  m_TagString: Powerup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -200,6 +201,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &330043319
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330043316}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.009729862}
+  serializedVersion: 2
+  m_Radius: 0.2110397
 --- !u!1 &420155820
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,5 +452,17 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3010077986632863954, guid: 03e498b002449c1418bab4e026029f9d,
+        type: 3}
+      propertyPath: lawnmower
+      value: 
+      objectReference: {fileID: 21300000, guid: f6e0748b7256c4d45808cf9e12446db8,
+        type: 3}
+    - target: {fileID: 3010077986632863954, guid: 03e498b002449c1418bab4e026029f9d,
+        type: 3}
+      propertyPath: truck
+      value: 
+      objectReference: {fileID: 21300000, guid: 667c8de593badec4896f4599de6c61ef,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03e498b002449c1418bab4e026029f9d, type: 3}

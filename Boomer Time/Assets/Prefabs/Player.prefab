@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3396334881711853606}
   - component: {fileID: 3396334881711853605}
   - component: {fileID: 3396334881711854040}
+  - component: {fileID: 3010077986632863954}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -116,10 +117,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9f7fc5fc8e70a748971c9ed30f19881, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 50
+  speed: 100
   rb: {fileID: 0}
   horizontalSpeed: 0
   verticalSpeed: 0
   canMove: 1
   acceleration: 0
   maxVelo: {x: 2, y: 2}
+--- !u!114 &3010077986632863954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3396334881711853604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37d472d3aadaf854c964d58fea1309ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lawnmower: {fileID: 0}
+  truck: {fileID: 0}
+  player: {fileID: 0}
+  isLawnmower: 0
+  isTruck: 0
