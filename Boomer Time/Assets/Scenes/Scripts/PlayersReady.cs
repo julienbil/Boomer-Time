@@ -13,6 +13,7 @@ public class PlayersReady : MonoBehaviour
     public Text text1;
     public Text text2;
     public Text textWaiting;
+    public static bool gameIsStarted = false;
     public static bool ok = true;
 
     void Update()
@@ -36,7 +37,6 @@ public class PlayersReady : MonoBehaviour
         }
         else if (P1Ready == true && P2Ready == false)
         {
-            Debug.Log("ok");
             textWaiting.text = "En attente du joueur 2.";
         }
         else if (P1Ready == false && P2Ready == true)
