@@ -2,25 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class PauseMenu : MonoBehaviour
 {
     public static bool gameIsPaused = false;
     public GameObject pauseMenuUI;
+    public EventSystem m_EventSystem;
+    public GameObject resumeBut;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (PlayersReady.gameIsStarted)
         {
-            if (gameIsPaused)
-            {
-                Resume();
-            }
-            else
-            {
-                Pause();
+            if (Input.GetButtonDown("Start"))
+                 {
+                     if (gameIsPaused)
+                     {
+                         Resume();
+                     }
+                     else
+                     {
+                         m_EventSystem.SetSelectedGameObject(resumeBut);
+                         Pause();
+                     }
             }
         }
+       
     } 
 
     public void Resume()
@@ -39,11 +47,22 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadMenu()
     {
-        SceneManager.LoadScene("Scene1P");
+        
+        if (startMenu.nbeDeJoueur)
+        {
+            SceneManager.LoadScene("Scene1P");
+        }
+        else
+        {
+            PlayersReady.gameIsStarted = false;
+            SceneManager.LoadScene("Scene2P");
+        }
+        
     }
 
     public void Quit()
     {
+        PlayersReady.gameIsStarted = false;
         SceneManager.LoadScene("Start");
     }
 }

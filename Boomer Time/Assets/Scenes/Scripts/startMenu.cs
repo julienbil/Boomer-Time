@@ -2,28 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class startMenu : MonoBehaviour
 {
-    public static bool gameIsStarted = false;
     public GameObject startMenuUI;
     public GameObject instructionText;
     public GameObject retourButton;
     public GameObject but1Player;
     public GameObject but2Player;
+    public GameObject startBut;
     private Scene scene;
+    public EventSystem m_EventSystem;
+    public static bool nbeDeJoueur = false;
 
     public void start()
-    {
+    {  
         startMenuUI.SetActive(false);
         but1Player.SetActive(true);
         but2Player.SetActive(true);
+        m_EventSystem.SetSelectedGameObject(but1Player);
     }
     public void instructionPath()
-    {
+    {    
         instructionText.SetActive(true);
         startMenuUI.SetActive(false);
         retourButton.SetActive(true);
+        m_EventSystem.SetSelectedGameObject(retourButton);
     }
     public void quitter()
     {
@@ -34,6 +39,7 @@ public class startMenu : MonoBehaviour
         instructionText.SetActive(false);
         startMenuUI.SetActive(true);
         retourButton.SetActive(false);
+        m_EventSystem.SetSelectedGameObject(startBut);
     }
     public void onePlayer()
     {
@@ -48,11 +54,12 @@ public class startMenu : MonoBehaviour
         switch (nombre)
         {
             case 1:
-              gameIsStarted = true;
+                PlayersReady.gameIsStarted = true;
+                nbeDeJoueur = true;
               SceneManager.LoadScene("Scene1P");
                 break;
             case 2:
-                gameIsStarted = true;
+                nbeDeJoueur = false;
                 SceneManager.LoadScene("Scene2P");
                 break;
 

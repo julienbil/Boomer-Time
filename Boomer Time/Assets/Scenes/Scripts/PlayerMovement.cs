@@ -12,8 +12,9 @@ public class PlayerMovement : MonoBehaviour
     public bool dashing;
     public int dashspeed;
     public Vector2 maxVelo;
-    bool tornadoIsActive = false
-        ;
+    public string horizon, verti,a;
+    bool tornadoIsActive = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,29 +41,29 @@ public class PlayerMovement : MonoBehaviour
     {
         if (canMove)
         {
-            horizontalSpeed = Input.GetAxis("Horizontal");
-            verticalSpeed = Input.GetAxis("Vertical");
+            horizontalSpeed = Input.GetAxis(horizon);
+            verticalSpeed = Input.GetAxis(verti);
         }
         if (canMove && tornadoIsActive)
         {
-            horizontalSpeed = -Input.GetAxis("Horizontal");
-            verticalSpeed = -Input.GetAxis("Vertical");
+            horizontalSpeed = -Input.GetAxis(horizon);
+            verticalSpeed = -Input.GetAxis(verti);
         }
-        if (Input.GetButtonDown("A"))
+        if (Input.GetButtonDown(a))
         {
             Dash();
         }
 
         //Vector3 lookDirection = new Vector3(0,0, Input.GetAxisRaw("Vertical") + Input.GetAxisRaw("Horizontal"));
         //transform.rotation = Quaternion.LookRotation(lookDirection);
-        if (Input.GetAxisRaw("Vertical") + Input.GetAxisRaw("Horizontal") != 0 && canMove)
+        if (Input.GetAxisRaw(verti) + Input.GetAxisRaw(horizon) != 0 && canMove)
         {
-            if (Input.GetAxis("Horizontal") == 0)
-                transform.eulerAngles = new Vector3(0, 0, Mathf.Atan(Input.GetAxis("Vertical") / Input.GetAxis("Horizontal")) * 360 / (2 * Mathf.PI) - 90);
-            else if (Input.GetAxis("Horizontal") > 0)
-                transform.eulerAngles = new Vector3(0, 0, Mathf.Atan(Input.GetAxis("Vertical") / Input.GetAxis("Horizontal")) * 360 / (2 * Mathf.PI) - 90);
-            else if (Input.GetAxis("Horizontal") < 0)
-                transform.eulerAngles = new Vector3(0, 0, Mathf.Atan(Input.GetAxis("Vertical") / Input.GetAxis("Horizontal")) * 360 / (2 * Mathf.PI) + 90);
+            if (Input.GetAxis(horizon) == 0)
+                transform.eulerAngles = new Vector3(0, 0, Mathf.Atan(Input.GetAxis(verti) / Input.GetAxis(horizon)) * 360 / (2 * Mathf.PI) - 90);
+            else if (Input.GetAxis(horizon) > 0)
+                transform.eulerAngles = new Vector3(0, 0, Mathf.Atan(Input.GetAxis(verti) / Input.GetAxis(horizon)) * 360 / (2 * Mathf.PI) - 90);
+            else if (Input.GetAxis(horizon) < 0)
+                transform.eulerAngles = new Vector3(0, 0, Mathf.Atan(Input.GetAxis(verti) / Input.GetAxis(horizon)) * 360 / (2 * Mathf.PI) + 90);
         }
             
         //Debug.Log(Input.GetAxisRaw("Vertical"));
