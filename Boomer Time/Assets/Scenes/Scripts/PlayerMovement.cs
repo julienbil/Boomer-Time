@@ -9,7 +9,6 @@ public class PlayerMovement : MonoBehaviour
     public float horizontalSpeed;
     public float verticalSpeed;
     public bool canMove = true;
-    public int acceleration;
     public bool dashing;
     public int dashspeed;
     public Vector2 maxVelo;
@@ -44,13 +43,12 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Input.GetButtonDown("A"))
         {
-            Debug.Log("Nigger");
             Dash();
         }
 
         //Vector3 lookDirection = new Vector3(0,0, Input.GetAxisRaw("Vertical") + Input.GetAxisRaw("Horizontal"));
         //transform.rotation = Quaternion.LookRotation(lookDirection);
-        if (Input.GetAxisRaw("Vertical") + Input.GetAxisRaw("Horizontal") != 0)
+        if (Input.GetAxisRaw("Vertical") + Input.GetAxisRaw("Horizontal") != 0 && canMove)
         {
             if (Input.GetAxis("Horizontal") == 0)
                 transform.eulerAngles = new Vector3(0, 0, Mathf.Atan(Input.GetAxis("Vertical") / Input.GetAxis("Horizontal")) * 360 / (2 * Mathf.PI) - 90);

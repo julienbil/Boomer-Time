@@ -225,6 +225,8 @@ MonoBehaviour:
   verticalSpeed: 0
   canMove: 1
   acceleration: 0
+  dashing: 0
+  dashspeed: 0
   maxVelo: {x: 2, y: 2}
 --- !u!114 &3010077986632863954
 MonoBehaviour:
@@ -246,7 +248,7 @@ MonoBehaviour:
   isLawnmower: 0
   pWeapon: {fileID: 0}
   isTruck: 0
-  isNormal: 0
+  isNormal: 1
   source: {fileID: 0}
   powerupsound: {fileID: 0}
 --- !u!114 &3318781991115284252

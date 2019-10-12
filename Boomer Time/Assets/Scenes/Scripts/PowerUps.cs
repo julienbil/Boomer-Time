@@ -32,7 +32,7 @@ public class PowerUps : MonoBehaviour
         {
             TurnIntoTruck();
         }
-        if (other.name == "Baseball Pup")
+        if (other.tag == "Weapon")
         {
             EquipWeapon(other.GetComponent<Weapon>().weaponname);
         }
