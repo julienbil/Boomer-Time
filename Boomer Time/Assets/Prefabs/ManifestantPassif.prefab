@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8137385173084149047}
   m_Layer: 0
   m_Name: ManifestantPassif
-  m_TagString: Untagged
+  m_TagString: manifPassifs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137,3 +137,4 @@ MonoBehaviour:
   speedMin: 5
   force: {x: 0, y: 0}
   xMovement: 10
+  xDepart: 0

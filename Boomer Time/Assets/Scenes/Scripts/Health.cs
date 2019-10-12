@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    void Start()
+    public int health;
+    void Start() { }
 
     public void RemoveHealth(int dmg)
     {
