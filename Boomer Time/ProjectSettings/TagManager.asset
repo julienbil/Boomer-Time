@@ -5,8 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - mur
-  tags:
-  - Powerup
+  - manifPassifs
   layers:
   - Default
   - TransparentFX

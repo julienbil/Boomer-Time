@@ -10,13 +10,18 @@ public class ManifPassifMvmt : MonoBehaviour
     public float speedMin;
     public Vector2 force;
     public float xMovement;
+    public float xDepart;
+    bool tornadeIsActive = false;
+    float timer = 1;
+    Vector2 modifier = new Vector2();
    
 
     private void Start()
     {
-        transform.position = transform.position + new Vector3(0, Random.Range(-4f, 4f));
+        transform.position = transform.position + new Vector3(xDepart, Random.Range(-4f, 4f));
         force = new Vector2(-xMovement, Random.Range(-10f, 10f));
         rb.mass = rb.mass * Random.Range(1, 10) / 5;
+        StartCoroutine(ActivateOnTimer());
     }
 
 
@@ -25,9 +30,8 @@ public class ManifPassifMvmt : MonoBehaviour
         float speed = Random.Range(10f * speedMin, 10f * speedMax)/2;
         Vector2 maxVelo = new Vector2(speed/100, speed/100);
 
-
         if (rb.velocity.sqrMagnitude < maxVelo.sqrMagnitude)
-            rb.AddForce(force);
+            rb.AddForce(force + modifier);
         
     }
 
@@ -42,5 +46,29 @@ public class ManifPassifMvmt : MonoBehaviour
         }
         
         
+    }
+    private IEnumerator ActivateOnTimer()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(timer);
+            Debug.Log(tornadeIsActive);
+            if (tornadeIsActive)
+            {
+
+                Debug.Log("nigga");
+                modifier = new Vector2(Random.Range(-100f, 100f)*10, Random.Range(-100f, 100f)*10);
+            }
+        }
+    }
+
+    public void TornadeActive()
+    {
+        tornadeIsActive = true;
+    }
+
+    public void TornadeInactive()
+    {
+        tornadeIsActive = false;
     }
 }
