@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     public float verticalSpeed;
     public bool canMove = true;
     public int acceleration;
+    public bool dashing;
+    public int dashspeed;
     public Vector2 maxVelo;
     bool tornadoIsActive = false
         ;
@@ -19,6 +21,21 @@ public class PlayerMovement : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody2D>();
     }
 
+    public void Dash()
+    {
+        if (canMove && !dashing)
+        {
+            StartCoroutine(DashCooldown());
+            rb.velocity += new Vector2(dashspeed * rb.velocity.x, dashspeed * rb.velocity.y);
+
+            IEnumerator DashCooldown()
+            {
+                dashing = true;
+                yield return new WaitForSeconds(0.4f);
+                dashing = false;
+            }
+        }
+    }
     // Update is called once per frame
     void Update()
     {
@@ -31,6 +48,10 @@ public class PlayerMovement : MonoBehaviour
         {
             horizontalSpeed = -Input.GetAxis("Horizontal");
             verticalSpeed = -Input.GetAxis("Vertical");
+        }
+        if (Input.GetButtonDown("A"))
+        {
+            Dash();
         }
 
         //Vector3 lookDirection = new Vector3(0,0, Input.GetAxisRaw("Vertical") + Input.GetAxisRaw("Horizontal"));

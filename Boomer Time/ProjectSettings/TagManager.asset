@@ -6,6 +6,7 @@ TagManager:
   tags:
   - mur
   - manifPassifs
+  - SoundManager
   layers:
   - Default
   - TransparentFX
