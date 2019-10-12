@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     public float verticalSpeed;
     public bool canMove = true;
     public bool dashing;
+    public bool driving;
+    public bool isStunned;
     public int dashspeed;
     public Vector2 maxVelo;
     public string horizon, verti,a;
@@ -18,12 +20,25 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = gameObject.GetComponent<Rigidbody2D>();
+
+    }
+
+
+    IEnumerator Stunned(float length)
+    {
+        isStunned = true;
+        yield return new WaitForSeconds(length);
+        isStunned = false;
+    }
+
+    public void beStunned(float length)
+    {
+        StartCoroutine(Stunned(length));
     }
 
     public void Dash()
     {
-        if (canMove && !dashing)
+        if (canMove && !dashing && !driving)
         {
             StartCoroutine(DashCooldown());
             rb.velocity += new Vector2(dashspeed * rb.velocity.x, dashspeed * rb.velocity.y);
@@ -39,12 +54,12 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (canMove)
+        if (canMove && !isStunned)
         {
             horizontalSpeed = Input.GetAxis(horizon);
             verticalSpeed = Input.GetAxis(verti);
         }
-        if (canMove && tornadoIsActive)
+        if (canMove && tornadoIsActive && !isStunned)
         {
             horizontalSpeed = -Input.GetAxis(horizon);
             verticalSpeed = -Input.GetAxis(verti);
@@ -70,12 +85,17 @@ public class PlayerMovement : MonoBehaviour
         //Debug.Log(Input.GetAxisRaw("Horizontal"));
         //Debug.Log(Input.GetAxisRaw("Vertical") / Input.GetAxisRaw("Horizontal"));
         //Debug.Log(Mathf.Atan(Input.GetAxisRaw("Vertical") / Input.GetAxisRaw("Horizontal")) * 360 / (2 * Mathf.PI));
-        if (rb.velocity.sqrMagnitude < maxVelo.sqrMagnitude && canMove)
+        if (rb.velocity.sqrMagnitude < maxVelo.sqrMagnitude && canMove && !driving)
         {
             rb.AddForce(new Vector2(horizontalSpeed*speed/100, verticalSpeed*speed/100));
         }
+        if (rb.velocity.sqrMagnitude < maxVelo.sqrMagnitude && canMove && driving)
+        {
+            rb.transform.position = rb.transform.position + new Vector3(horizontalSpeed * speed / 100, verticalSpeed * speed / 100, 0);
+        }
 
-    
+
+
     }
 
 

@@ -9,6 +9,7 @@ TagManager:
   - SoundManager
   - Weapon
   - Powerup
+  - bb hitbox
   layers:
   - Default
   - TransparentFX
@@ -18,10 +19,10 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Weapon1
+  - Player1
+  - Player2
+  - Weapon2
   - 
   - 
   - 

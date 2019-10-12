@@ -8,6 +8,7 @@ public class PowerUps : MonoBehaviour
     public PlayerMovement playmov;
     public bool isLawnmower;
     public PlayerWeapon pWeapon;
+    public Rigidbody2D rb;
     public bool isTruck;
     public bool isNormal;
     public AudioSource source;
@@ -20,7 +21,10 @@ public class PowerUps : MonoBehaviour
         source = GameObject.FindGameObjectWithTag("SoundManager").GetComponent<AudioSource>();
         source.clip = powerupsound;
         playmov = gameObject.GetComponent<PlayerMovement>();
+        rb = gameObject.GetComponent<Rigidbody2D>();
     }
+
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -34,7 +38,7 @@ public class PowerUps : MonoBehaviour
         }
         if (other.tag == "Weapon")
         {
-            EquipWeapon(other.GetComponent<Weapon>().weaponname);
+            EquipWeapon(other.name);
         }
         if (other.tag == "Weapon" || other.tag == "Powerup")
         Destroy(other.gameObject);
@@ -53,21 +57,21 @@ public class PowerUps : MonoBehaviour
     void EquipWeapon(string weaponname)
     {
         UnequipWeapon(pWeapon.currentWeapon);
-        if (weaponname == "Baseball")
+        if (weaponname == "Baseball Pup")
         {
             pWeapon.currentWeapon = "Baseball";
             pWeapon.baseball.SetActive(true);
         }
-        //if (weaponname == "Torch")
-        //{
-        //    pWeapon.currentWeapon = "Torch";
-        //    pWeapon.torch.SetActive(true);
-        //}
-        //if (weaponname == "Golden Hammer")
-        //{
-        //    pWeapon.currentWeapon = "Golden Hammer";
-        //    pWeapon.goldenhammer.SetActive(true);
-        //}
+        if (weaponname == "Torch")
+        {
+            pWeapon.currentWeapon = "Torch";
+            pWeapon.torch.SetActive(true);
+        }
+        if (weaponname == "Hammer")
+        {
+            pWeapon.currentWeapon = "Hammer";
+            pWeapon.hammer.SetActive(true);
+        }
     }
 
     void UnequipWeapon(string weaponname)
@@ -129,18 +133,30 @@ public class PowerUps : MonoBehaviour
     {
         if (isLawnmower)
         {
-            playmov.speed = 150;
+            playmov.driving = true;
+            gameObject.GetComponents<CapsuleCollider2D>()[0].enabled = false;
+            gameObject.GetComponents<CapsuleCollider2D>()[1].enabled = true;
+            rb.bodyType = RigidbodyType2D.Kinematic;
+            playmov.rb.velocity = Vector3.zero;
+            playmov.speed = 2;
         }
         if (isTruck)
         {
-            gameObject.GetComponent<CapsuleCollider2D>().enabled = true;
+            playmov.driving = true;
+            gameObject.GetComponents<CapsuleCollider2D>()[1].enabled = false;
+            gameObject.GetComponents<CapsuleCollider2D>()[0].enabled = true;
+            rb.bodyType = RigidbodyType2D.Kinematic;
+            playmov.rb.velocity = Vector3.zero;
             playmov.rb.mass = 25;
             playmov.rb.drag = 1f;
-            playmov.speed = 4000;
+            playmov.speed = 5;
         }
         if (isNormal)
         {
-            gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
+            playmov.driving = false;
+            gameObject.GetComponents<CapsuleCollider2D>()[0].enabled = false;
+            gameObject.GetComponents<CapsuleCollider2D>()[1].enabled = false;
+            rb.bodyType = RigidbodyType2D.Dynamic;
             playmov.rb.drag = 10;
             playmov.rb.mass = 0.1f;
             playmov.speed = 100;
