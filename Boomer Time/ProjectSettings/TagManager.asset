@@ -8,6 +8,7 @@ TagManager:
   - manifPassifs
   - SoundManager
   - Weapon
+  - Powerup
   layers:
   - Default
   - TransparentFX
