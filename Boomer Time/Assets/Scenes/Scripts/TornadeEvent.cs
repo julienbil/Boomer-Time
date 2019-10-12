@@ -12,7 +12,7 @@ public class TornadeEvent : MonoBehaviour
         passifs = GameObject.FindGameObjectsWithTag("manifPassifs");
         foreach (GameObject player in joueurs)
         {
-
+            player.GetComponent<PlayerMovement>().ActivateTornado();
         }
         foreach (GameObject passif in passifs)
         {
@@ -20,19 +20,19 @@ public class TornadeEvent : MonoBehaviour
         }
     }
 
-    /*
-    void Update()
+    
+    void OnDestroy()
     {
         joueurs = GameObject.FindGameObjectsWithTag("Player");
         passifs = GameObject.FindGameObjectsWithTag("manifPassifs");
         foreach (GameObject player in joueurs)
         {
-
+            player.GetComponent<PlayerMovement>().DeactivateTornado();
         }
         foreach (GameObject passif in passifs)
         {
             passif.GetComponent<ManifPassifMvmt>().TornadeInactive();
         }
     }
-    */
+    
 }

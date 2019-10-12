@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     public bool canMove = true;
     public int acceleration;
     public Vector2 maxVelo;
+    bool tornadoIsActive = false
+        ;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,10 +27,15 @@ public class PlayerMovement : MonoBehaviour
             horizontalSpeed = Input.GetAxis("Horizontal");
             verticalSpeed = Input.GetAxis("Vertical");
         }
+        if (canMove && tornadoIsActive)
+        {
+            horizontalSpeed = -Input.GetAxis("Horizontal");
+            verticalSpeed = -Input.GetAxis("Vertical");
+        }
 
         //Vector3 lookDirection = new Vector3(0,0, Input.GetAxisRaw("Vertical") + Input.GetAxisRaw("Horizontal"));
         //transform.rotation = Quaternion.LookRotation(lookDirection);
-        if(Input.GetAxisRaw("Vertical") + Input.GetAxisRaw("Horizontal") != 0)
+        if (Input.GetAxisRaw("Vertical") + Input.GetAxisRaw("Horizontal") != 0)
         {
             if (Input.GetAxis("Horizontal") == 0)
                 transform.eulerAngles = new Vector3(0, 0, Mathf.Atan(Input.GetAxis("Vertical") / Input.GetAxis("Horizontal")) * 360 / (2 * Mathf.PI) - 90);
@@ -48,5 +55,16 @@ public class PlayerMovement : MonoBehaviour
         }
 
     
+    }
+
+
+    public void ActivateTornado()
+    {
+        tornadoIsActive = true;
+    }
+
+    public void DeactivateTornado()
+    {
+        tornadoIsActive = false;
     }
 }

@@ -9,12 +9,13 @@ public class testCharles : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(ActivateOnTimer());
+        //StartCoroutine(ActivateOnTimer());
     }
 
+
     // Update is called once per frame
-    
-        private IEnumerator ActivateOnTimer()
+
+    private IEnumerator ActivateOnTimer()
         {
             while (true)
             {
@@ -23,7 +24,7 @@ public class testCharles : MonoBehaviour
                 if (testing)
                 {
                     testing = false;
-                    Instantiate(ffyyf);
+                    Destroy(Instantiate(ffyyf), 10);
                 }
             }
         }
