@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8137385173084149032}
   - component: {fileID: 8137385173084149044}
   - component: {fileID: 8137385173084149047}
+  - component: {fileID: 5315372416816574707}
   m_Layer: 0
   m_Name: ManifestantPassif
   m_TagString: manifPassifs
@@ -138,3 +139,20 @@ MonoBehaviour:
   force: {x: 0, y: 0}
   xMovement: 10
   xDepart: 0
+--- !u!114 &5315372416816574707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8137385173084149035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfe9286c33308534693788de693795a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteArray:
+  - {fileID: -5516479071657730755, guid: c4996e037dc06cf43a95784ab14c37ad, type: 3}
+  - {fileID: -1215068920418822941, guid: 5a6840b1b2a4d6245a691ff29c9f2023, type: 3}
+  - {fileID: 8535271382746967934, guid: 1d57a9b9d99c3574484479445aea6ed9, type: 3}
+  spriteRenderer: {fileID: 8137385173084149044}

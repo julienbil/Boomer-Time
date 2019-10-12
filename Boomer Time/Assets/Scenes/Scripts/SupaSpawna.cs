@@ -19,8 +19,9 @@ public class SupaSpawna : MonoBehaviour
     {
         if (Time.time - lastSpawn >= cd)
         {
-            for(int i=0;i<Random.Range(enemyMin,enemyMax);i++)
+            for (int i = 0; i < Random.Range(enemyMin, enemyMax); i++)
                 Instantiate(enemy, new Vector3(xPos, Random.Range(-3,3), 0), Quaternion.identity);
+                
             cd = Random.Range(minCD, maxCD);
             lastSpawn = Time.time;
         }
