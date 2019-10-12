@@ -88,11 +88,13 @@ public class StreetGenerator : MonoBehaviour
         float actualY = startY;
         for (int i = 0; i < tempMap.GetLength(1) - 1; i++)
         {
-            actualY += map[i, 0].transform.localScale.y;
+            //actualY += map[i, 0].transform.localScale.y;
+            actualY += 2;
             tempMap[tempMap.GetLength(0)-1, i] = Instantiate(differentTiles[tempMapData[tempMapData.GetLength(0)-1, i]]);
             tempMap[tempMap.GetLength(0) - 1, i].transform.position = transform.position + new Vector3(positionX / 1.57f, -actualY / 1.57f, 37);
         }
         positionX += map[0, 0].transform.localScale.x;
+        Debug.Log(positionX);
     }
 
     void DestroyUseless()
