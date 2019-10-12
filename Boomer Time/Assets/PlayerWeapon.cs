@@ -20,6 +20,6 @@ public class PlayerWeapon : MonoBehaviour
     void Update()
     {
         Physics2D.IgnoreCollision(weaponCollider, GetComponent<CircleCollider2D>(), true);
-        Debug.Log(Physics2D.GetIgnoreCollision(weaponCollider, GetComponent<CircleCollider2D>()));
+        //Debug.Log(Physics2D.GetIgnoreCollision(weaponCollider, GetComponent<CircleCollider2D>()));
     }
 }
