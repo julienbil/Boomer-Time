@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
+    public int health;
     void Start()
+    {
+
+    }
 
     public void RemoveHealth(int dmg)
     {
