@@ -114,7 +114,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   direction: {x: 0, y: 0, z: 0}
   force: 4000
-  stunlength: 0.5
+  stunlength: 1
 --- !u!50 &5791247722824155779
 Rigidbody2D:
   serializedVersion: 4

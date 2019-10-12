@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public bool isStunned;
     public int dashspeed;
     public Vector2 maxVelo;
-    public string horizon, verti,a;
+    public string horizon, verti, a, x;
     bool tornadoIsActive = false;
 
     // Start is called before the first frame update
@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
         isStunned = true;
         yield return new WaitForSeconds(length);
         isStunned = false;
+        canMove = true;
     }
 
     public void beStunned(float length)
@@ -54,12 +55,25 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (canMove && !isStunned)
+        if (Input.GetButtonDown(x))
+        {
+            if (gameObject.GetComponent<PlayerWeapon>().currentWeapon == "Baseball")
+            {
+                gameObject.GetComponent<PlayerWeapon>().baseball.GetComponent<Weapon>().Attack();
+            }
+        }
+
+        if (isStunned)
+        {
+            canMove = false;
+        }
+
+        if (canMove)
         {
             horizontalSpeed = Input.GetAxis(horizon);
             verticalSpeed = Input.GetAxis(verti);
         }
-        if (canMove && tornadoIsActive && !isStunned)
+        if (canMove && tornadoIsActive)
         {
             horizontalSpeed = -Input.GetAxis(horizon);
             verticalSpeed = -Input.GetAxis(verti);

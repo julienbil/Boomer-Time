@@ -19,7 +19,5 @@ public class PlayerWeapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Physics2D.IgnoreCollision(weaponCollider, GetComponent<CircleCollider2D>(), true);
-        Debug.Log(Physics2D.GetIgnoreCollision(weaponCollider, GetComponent<CircleCollider2D>()));
     }
 }
