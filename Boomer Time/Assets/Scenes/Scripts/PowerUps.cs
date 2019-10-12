@@ -127,18 +127,20 @@ public class PowerUps : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (lawnmower)
+        if (isLawnmower)
         {
             playmov.speed = 150;
         }
         if (isTruck)
         {
+            gameObject.GetComponent<CapsuleCollider2D>().enabled = true;
             playmov.rb.mass = 25;
             playmov.rb.drag = 1f;
             playmov.speed = 4000;
         }
         if (isNormal)
         {
+            gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
             playmov.rb.drag = 10;
             playmov.rb.mass = 0.1f;
             playmov.speed = 100;
