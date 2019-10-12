@@ -38,7 +38,7 @@ public class ManifPassifMvmt : MonoBehaviour
     void OnCollisionEnter2D(Collision2D col)
     {
         
-        if(col.gameObject.tag == "mur")
+        if(col.gameObject.tag == "mur" || col.gameObject.tag == "manifPassifs")
         {
             force = new Vector2(-xMovement, force.y*-1);
             rb.velocity = new Vector2(0, -rb.velocity.y);
