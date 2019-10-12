@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PowerUps : MonoBehaviour
 {
-    public Sprite player, lawnmower, truck;
+    public Sprite player, lawnmower, truck, temp;
     public PlayerMovement playmov;
     public bool isLawnmower;
     public bool isTruck;
@@ -32,30 +32,67 @@ public class PowerUps : MonoBehaviour
 
     void TurnIntoLawnmower()
     {
-        isTruck = false;
-        gameObject.GetComponent<SpriteRenderer>().sprite = lawnmower;
+        temp = gameObject.GetComponent<SpriteRenderer>().sprite;
+  
+        IEnumerator TransformLawnmower()
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = truck;
+            yield return new WaitForSecondsRealtime(0.1f);
+            gameObject.GetComponent<SpriteRenderer>().sprite = temp;
+            yield return new WaitForSecondsRealtime(0.1f);
+            gameObject.GetComponent<SpriteRenderer>().sprite = truck;
+            yield return new WaitForSecondsRealtime(0.1f);
+            gameObject.GetComponent<SpriteRenderer>().sprite = temp;
+            yield return new WaitForSecondsRealtime(0.1f);
+            gameObject.GetComponent<SpriteRenderer>().sprite = truck;
+            yield return new WaitForSecondsRealtime(0.1f);
+        }
         StopAllCoroutines();
+        TurnIntoBoomer();
         IEnumerator BeLawnmower()
         {
             isLawnmower = true;
+            isNormal = false;
             yield return new WaitForSeconds(10);
             gameObject.GetComponent<SpriteRenderer>().sprite = player;
-            isLawnmower = false;
+            TurnIntoBoomer();
         }
         StartCoroutine(BeLawnmower());
     }
 
     void TurnIntoTruck()
     {
-        isLawnmower = false;
-        gameObject.GetComponent<SpriteRenderer>().sprite = truck;
+        temp = gameObject.GetComponent<SpriteRenderer>().sprite;
+        IEnumerator Transforming()
+        {
+            Time.timeScale = 0;
+            yield return new WaitForSecondsRealtime(0.5f);
+            Time.timeScale = 1;
+        }
+        IEnumerator TransformTruck()
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = truck;
+            yield return new WaitForSecondsRealtime(0.1f);
+            gameObject.GetComponent<SpriteRenderer>().sprite = temp;
+            yield return new WaitForSecondsRealtime(0.1f);
+            gameObject.GetComponent<SpriteRenderer>().sprite = truck;
+            yield return new WaitForSecondsRealtime(0.1f);
+            gameObject.GetComponent<SpriteRenderer>().sprite = temp;
+            yield return new WaitForSecondsRealtime(0.1f);
+            gameObject.GetComponent<SpriteRenderer>().sprite = truck;
+            yield return new WaitForSecondsRealtime(0.1f);
+        }
         StopAllCoroutines();
+        StartCoroutine(TransformTruck());
+        StartCoroutine(Transforming());
+        TurnIntoBoomer();
         IEnumerator BeTruck()
         {
             isTruck = true;
+            isNormal = false;
             yield return new WaitForSeconds(5);
             gameObject.GetComponent<SpriteRenderer>().sprite = player;
-            isTruck = false;
+            TurnIntoBoomer();
         }
         StartCoroutine(BeTruck());
     }
@@ -80,7 +117,7 @@ public class PowerUps : MonoBehaviour
         }
         if (isNormal)
         {
-            playmov.speed = 250;
+            playmov.speed = 100;
         }
     }
 }

@@ -22,8 +22,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (canMove)
         {
-            horizontalSpeed = Input.GetAxis("Mouse X");
-            verticalSpeed = Input.GetAxis("Mouse Y");
+            horizontalSpeed = Input.GetAxis("Horizontal");
+            verticalSpeed = Input.GetAxis("Vertical");
         }
 
         if (rb.velocity.sqrMagnitude < maxVelo.sqrMagnitude)
