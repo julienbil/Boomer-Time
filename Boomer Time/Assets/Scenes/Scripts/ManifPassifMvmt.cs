@@ -52,11 +52,8 @@ public class ManifPassifMvmt : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(timer);
-            Debug.Log(tornadeIsActive);
             if (tornadeIsActive)
             {
-
-                Debug.Log("nigga");
                 modifier = new Vector2(Random.Range(-100f, 100f)*10, Random.Range(-100f, 100f)*10);
             }
         }

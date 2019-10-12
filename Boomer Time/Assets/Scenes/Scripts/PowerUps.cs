@@ -24,7 +24,7 @@ public class PowerUps : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.name == "Lawnmower Pup")
+        if (other.name == "Lawnmower Pup")
         {
             TurnIntoLawnmower();
         }
@@ -36,6 +36,7 @@ public class PowerUps : MonoBehaviour
         {
             EquipWeapon(other.GetComponent<Weapon>().weaponname);
         }
+        if (other.tag == "Weapon" || other.tag == "Powerup")
         Destroy(other.gameObject);
     }
 
@@ -109,7 +110,7 @@ public class PowerUps : MonoBehaviour
         {
             isTruck = true;
             isNormal = false;
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(10);
             gameObject.GetComponent<SpriteRenderer>().sprite = player;
             TurnIntoBoomer();
         }
@@ -132,10 +133,14 @@ public class PowerUps : MonoBehaviour
         }
         if (isTruck)
         {
-            playmov.speed = 250;
+            playmov.rb.mass = 25;
+            playmov.rb.drag = 1f;
+            playmov.speed = 4000;
         }
         if (isNormal)
         {
+            playmov.rb.drag = 10;
+            playmov.rb.mass = 0.1f;
             playmov.speed = 100;
         }
     }
