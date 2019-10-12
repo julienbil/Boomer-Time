@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 195797352}
   m_Layer: 0
   m_Name: Baseball Pup
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1500,6 +1500,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3396334881711854040, guid: 03e498b002449c1418bab4e026029f9d,
+        type: 3}
+      propertyPath: dashspeed
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03e498b002449c1418bab4e026029f9d, type: 3}
