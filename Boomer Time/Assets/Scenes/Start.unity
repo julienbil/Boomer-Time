@@ -266,7 +266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.0141509175, b: 0.0141509175, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -335,6 +335,7 @@ MonoBehaviour:
   but1Player: {fileID: 1257522911}
   but2Player: {fileID: 1132367200}
   m_EventSystem: {fileID: 456667639}
+  highScoreBoard: {fileID: 0}
 --- !u!114 &326895008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1578,7 +1579,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 326895007}
-        m_MethodName: onePlayer
+        m_MethodName: hs1Player
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1897,7 +1898,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2963,7 +2964,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 326895007}
-        m_MethodName: twoPlayers
+        m_MethodName: hs2Player
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -24,10 +24,26 @@ public class startMenu : MonoBehaviour
     public EventSystem m_EventSystem;
     private bool ok = false;
     public static bool nbeDeJoueur = false;
+    string number,name,score,highscoreBoard;
+    public Text highScoreBoard;
+
 
     void Start()
     {
+        //Manque name null et trier
         m_EventSystem = EventSystem.current;
+        TextAsset textCVS = Resources.Load<TextAsset>("highscoreFile");
+        string[] data = textCVS.text.Split(new char[] { '\n' });
+
+        for (int i = 1;i < data.Length - 1; i++)
+        {
+            string[] rangee = data[i].Split(new char[] { ',' });
+            number = rangee[0];
+            name = rangee[1];
+            score = rangee[2];
+            highscoreBoard = (number + "\t" + name + "\t" + score + "\n");
+        }
+        highScoreBoard.text = highscoreBoard;
     }
     public void start()
     {
@@ -104,7 +120,7 @@ public class startMenu : MonoBehaviour
             case 1:
                 PlayersReady.gameIsStarted = true;
                 nbeDeJoueur = true;
-              SceneManager.LoadScene("Scene1P");
+              SceneManager.LoadScene("SampleScene1P");
                 break;
             case 2:
                 nbeDeJoueur = false;
@@ -114,5 +130,13 @@ public class startMenu : MonoBehaviour
         }
         
     }
-   
+    public void hs1Player()
+    {
+        highScoreBoard.enabled = true;
+    }
+    public void hs2Player()
+    {
+
+    }
+
 }
