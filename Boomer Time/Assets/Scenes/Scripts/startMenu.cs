@@ -13,10 +13,14 @@ public class startMenu : MonoBehaviour
     public GameObject retourButton;
     public GameObject choixNbeJoueurs;
     public GameObject panHs;
+    public GameObject controllerPan;
     public Button startBut;
     public Button instrucBut;
     public Button Hsbut;
     public Button quitBut;
+    public Button nextBut;
+    public Button useless;
+    public Button controlleBut;
     public GameObject but1PlayerHS;
     public GameObject but2PlayerHS;
     public GameObject but1Player;
@@ -100,7 +104,7 @@ public class startMenu : MonoBehaviour
         ok = true;
         instructionPan.SetActive(true);
         retourButton.SetActive(true);
-        m_EventSystem.SetSelectedGameObject(retourButton);
+        m_EventSystem.SetSelectedGameObject(nextBut.gameObject);
     }
     public void highscore()
     {
@@ -130,6 +134,7 @@ public class startMenu : MonoBehaviour
         instructionPan.SetActive(false);
         retourButton.SetActive(false);
         panHs.SetActive(false);
+        controllerPan.SetActive(false);
         m_EventSystem.SetSelectedGameObject(startBut.gameObject);
         ok = false;
     }
@@ -148,11 +153,12 @@ public class startMenu : MonoBehaviour
             case 1:
                 PlayersReady.gameIsStarted = true;
                 nbeDeJoueur = true;
-              SceneManager.LoadScene("SampleScene1P");
+                SupaDestroya.dead2 = true;
+                SceneManager.LoadScene("Street1P");
                 break;
             case 2:
                 nbeDeJoueur = false;
-                SceneManager.LoadScene("Scene2P");
+                SceneManager.LoadScene("Street2P");
                 break;
 
         }
@@ -169,6 +175,15 @@ public class startMenu : MonoBehaviour
         highScoreBoard1.gameObject.SetActive(true);
         but1PlayerHS.SetActive(false);
         but2PlayerHS.SetActive(false);
+    }
+    public void next()
+    {
+        controllerPan.SetActive(true);
+        startBut.interactable = false;
+        instrucBut.interactable = false;
+        Hsbut.interactable = false;
+        quitBut.interactable = false;
+        m_EventSystem.SetSelectedGameObject(useless.gameObject);
     }
     
 }

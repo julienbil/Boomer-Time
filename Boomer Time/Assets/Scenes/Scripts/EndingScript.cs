@@ -3,19 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class EndingScript : MonoBehaviour
 {
+    public TextMeshProUGUI optext;
     public Button rejouerBut,quitterBut,menuBut;
+
+    private void Start()
+    {
+        optext.text = "Score final: "+((int)(ScoreManager.scoreP1 + ScoreManager.scoreP2)).ToString();
+        ScoreManager.scoreP1 = 0;
+        ScoreManager.scoreP2 = 0;
+    }
     public void rejouer()
     {
         if (startMenu.nbeDeJoueur)
         {
-            SceneManager.LoadScene("SampleScene1P");
+            SceneManager.LoadScene("Street1P");
         }
         if (!startMenu.nbeDeJoueur)
         {
-            SceneManager.LoadScene("Scene2P");
+            SceneManager.LoadScene("Street2P");
         }
     }
     public void quitter()

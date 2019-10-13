@@ -8,8 +8,8 @@ using TMPro;
 public class ScoreManager : MonoBehaviour
 {
     public GameObject player2;
-    public float scoreP1 = 0;
-    public float scoreP2 = 0;
+    public static float scoreP1 = 0;
+    public static float scoreP2 = 0;
     public TextMeshProUGUI scoreText1;
     public TextMeshProUGUI scoreText2;
     public TextMeshProUGUI timerText;
@@ -26,23 +26,11 @@ public class ScoreManager : MonoBehaviour
     void Update()
     {
         UpdateScore();
-        if (!startMenu.nbeDeJoueur)
+        if (SupaDestroya.dead1 && SupaDestroya.dead2)
         {
-            if (SupaDestroya.dead1 && SupaDestroya.dead2)
-            {
-                /*score = scoreP1 + scoreP2;
-                for(int i = 0; i < 10; i++)
-                {
-                    if(score > startMenu.scoreList[i])
-                    {
-                        startMenu.scoreList[i] = score;
-                        i = 10;
-                    }
-                }*/
-                SceneManager.LoadScene("Ending");
-                SupaDestroya.dead1 = false;
-                SupaDestroya.dead2 = false;
-            }
+            SceneManager.LoadScene("Ending");
+            SupaDestroya.dead1 = false;
+            SupaDestroya.dead2 = false;
         }
     }
 
