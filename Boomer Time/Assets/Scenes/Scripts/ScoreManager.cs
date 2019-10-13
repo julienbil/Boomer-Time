@@ -10,6 +10,8 @@ public class ScoreManager : MonoBehaviour
     public Text scoreText1;
     public Text scoreText2;
     public float time;
+    public bool player1lost = false;
+    public bool player2lost = false;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +31,10 @@ public class ScoreManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(player1lost && player2lost)
+        {
+            /*End screen*/
+        }
     }
 
     public void AddPoints(int player, int nb)
