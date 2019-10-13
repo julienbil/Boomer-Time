@@ -150,13 +150,12 @@ public class PlayerMovement : MonoBehaviour
         }
         if (((Input.GetAxisRaw(verti) + Input.GetAxisRaw(horizon) != 0 && canMove) || isBurning) && tornadoIsActive)
         {
-            Debug.Log("Nie");
             if (Input.GetAxis(horizon) == 0)
-                transform.eulerAngles = new Vector3(0, 0, Mathf.Atan(-Input.GetAxis(verti) / -Input.GetAxis(horizon)) * 360 / (2 * Mathf.PI) - 90);
+                transform.eulerAngles = new Vector3(0, 0, Mathf.Atan(Input.GetAxis(verti) / Input.GetAxis(horizon)) * 360 / (2 * Mathf.PI) + 90);
             else if (Input.GetAxis(horizon) > 0)
-                transform.eulerAngles = new Vector3(0, 0, Mathf.Atan(-Input.GetAxis(verti) / -Input.GetAxis(horizon)) * 360 / (2 * Mathf.PI) - 90);
+                transform.eulerAngles = new Vector3(0, 0, Mathf.Atan(Input.GetAxis(verti) / Input.GetAxis(horizon)) * 360 / (2 * Mathf.PI) + 90);
             else if (Input.GetAxis(horizon) < 0)
-                transform.eulerAngles = new Vector3(0, 0, Mathf.Atan(-Input.GetAxis(verti) / -Input.GetAxis(horizon)) * 360 / (2 * Mathf.PI) + 90);
+                transform.eulerAngles = new Vector3(0, 0, Mathf.Atan(Input.GetAxis(verti) / Input.GetAxis(horizon)) * 360 / (2 * Mathf.PI) - 90);
         }
 
         if (rb.velocity.sqrMagnitude < maxVelo.sqrMagnitude && isBurning && !driving)
