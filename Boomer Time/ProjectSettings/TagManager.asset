@@ -15,6 +15,7 @@ TagManager:
   - meteor
   - tremblement
   - cameraHolder
+  - highscore
   layers:
   - Default
   - TransparentFX

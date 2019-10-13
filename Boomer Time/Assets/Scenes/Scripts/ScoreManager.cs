@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class ScoreManager : MonoBehaviour
@@ -23,6 +24,41 @@ public class ScoreManager : MonoBehaviour
     void Update()
     {
         UpdateScore();
+        if (!startMenu.nbeDeJoueur)
+        {
+            if (SupaDestroya.dead1 && SupaDestroya.dead2)
+            {
+                /*score = scoreP1 + scoreP2;
+                for(int i = 0; i < 10; i++)
+                {
+                    if(score > startMenu.scoreList[i])
+                    {
+                        startMenu.scoreList[i] = score;
+                        i = 10;
+                    }
+                }*/
+                SceneManager.LoadScene("Ending");
+                SupaDestroya.dead1 = false;
+                SupaDestroya.dead2 = false;
+            }
+        }
+        if (startMenu.nbeDeJoueur)
+        {
+            if (SupaDestroya.dead1)
+            {
+               /* score = scoreP1 + scoreP2;
+                for (int i = 0; i < 10; i++)
+                {
+                    if (score > startMenu.scoreList1[i])
+                    {
+                        startMenu.scoreList1[i] = score;
+                        i = 10;
+                    }
+                }*/
+                SceneManager.LoadScene("Ending");
+                SupaDestroya.dead1 = false;
+            }
+        }
     }
 
     public void AddPoints(int player, int nb)
