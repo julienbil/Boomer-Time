@@ -165,9 +165,9 @@ public class PowerUps : MonoBehaviour
             playmov.driving = true;
             gameObject.GetComponents<CapsuleCollider2D>()[1].enabled = false;
             gameObject.GetComponents<CapsuleCollider2D>()[0].enabled = true;
-            rb.bodyType = RigidbodyType2D.Kinematic;
+            //rb.bodyType = RigidbodyType2D.Kinematic;
             playmov.rb.velocity = Vector3.zero;
-            playmov.rb.mass = 25;
+            playmov.rb.mass = 500;
             playmov.rb.drag = 1f;
             playmov.speed = 5;
         }
