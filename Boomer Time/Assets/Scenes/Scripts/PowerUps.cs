@@ -159,6 +159,7 @@ public class PowerUps : MonoBehaviour
             rb.bodyType = RigidbodyType2D.Kinematic;
             playmov.rb.velocity = Vector3.zero;
             playmov.speed = 2;
+            gameObject.transform.localScale = new Vector3(2.2f, 2.2f, 2.2f);
         }
         if (isTruck)
         {
@@ -170,6 +171,7 @@ public class PowerUps : MonoBehaviour
             playmov.rb.mass = 500;
             playmov.rb.drag = 1f;
             playmov.speed = 5;
+            gameObject.transform.localScale = new Vector3(3f, 3f, 3f);
         }
         if (isNormal)
         {
@@ -180,6 +182,7 @@ public class PowerUps : MonoBehaviour
             playmov.rb.drag = 10;
             playmov.rb.mass = 0.1f;
             playmov.speed = 100;
+            gameObject.transform.localScale = new Vector3(2.5f, 2.5f, 2.5f);
         }
     }
 }
