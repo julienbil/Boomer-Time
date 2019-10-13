@@ -2,39 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
-    public int scoreP1 = 0;
-    public int scoreP2 = 0;
-    public Text scoreText1;
-    public Text scoreText2;
-    public float time;
-    public bool player1lost = false;
-    public bool player2lost = false;
+    public float scoreP1 = 0;
+    public float scoreP2 = 0;
+    public TextMeshProUGUI scoreText1;
+    public TextMeshProUGUI scoreText2;
+    public TextMeshProUGUI timerText;
+    public float time=0;
 
     // Start is called before the first frame update
     void Start()
     {
-        time = Time.time;
-        IEnumerator GainPoints()
-        {
-            scoreP1 += 10;
-            scoreP2 += 10;
-            UpdateScore();
-            yield return new WaitForSeconds(1);
-            StartCoroutine(GainPoints());
-        }
-        StartCoroutine(GainPoints());
+      
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(player1lost && player2lost)
-        {
-            /*End screen*/
-        }
+        UpdateScore();
     }
 
     public void AddPoints(int player, int nb)
@@ -53,7 +41,23 @@ public class ScoreManager : MonoBehaviour
 
     void UpdateScore()
     {
-        scoreText1.text = "Score : " + scoreP1;
-        scoreText2.text = "Score : " + scoreP2;
+        time += Time.deltaTime;
+        timerText.text = time.ToString("F");
+
+        scoreP1 += 10 * Time.deltaTime;
+        scoreP2 += 10 * Time.deltaTime;
+
+        string score1 = ((int)scoreP1).ToString();
+        string score1Norm = "";
+        for(int i =0; i<8-score1.Length; i++) 
+            score1Norm += "0";
+        score1Norm += score1;
+        string score2 = ((int)scoreP2).ToString();
+        string score2Norm = "";
+        for (int i = 0; i < 8 - score2.Length; i++)
+            score2Norm += "0";
+        score2Norm += score2;
+        scoreText1.text = score1Norm;
+        scoreText2.text = score2Norm;
     }
 }

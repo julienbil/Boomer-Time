@@ -1,28 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Health : MonoBehaviour
 {
-    public int health;
-    void Start() { }
+    public TextMeshProUGUI player1;
+    public TextMeshProUGUI player2;
 
-    public void RemoveHealth(int dmg)
+    private void OnDestroy()
     {
-        health -= dmg;
-    }
-
-    public void AddHealth(int heal)
-    {
-        health += heal;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-     if (health <= 0)
+        if (gameObject.tag == "Player" && gameObject.layer == 9)
         {
-            Destroy(gameObject);
+            player1.text = "Mort";
+        }
+        else if (gameObject.tag == "Player" && gameObject.layer == 10)
+        {
+            player2.text = "Mort";
         }
     }
 }

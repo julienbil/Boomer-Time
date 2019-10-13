@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class SupaDestroya : MonoBehaviour
 {
-    public Text player1;
-    public Text player2;
-    public GameObject gm;
+    public TextMeshProUGUI player1;
+    public TextMeshProUGUI player2;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -18,16 +18,12 @@ public class SupaDestroya : MonoBehaviour
 
         if (other.tag == "Player" && other.gameObject.layer == 9)
         {
-            player1.text = "Player 1 a perdu :(";
-            gm.GetComponent<ScoreManager>().player1lost = true;
-
+            player1.text = "Mort";
             Destroy(other.gameObject);
         }
         else if (other.tag == "Player" && other.gameObject.layer == 10)
         {
-            player2.text = "Player 2 a perdu :(";
-            gm.GetComponent<ScoreManager>().player2lost = true;
-
+            player2.text = "Mort";
             Destroy(other.gameObject);
         }
     }
