@@ -4,11 +4,11 @@ using UnityEngine;
 
 [ExecuteInEditMode]
 [RequireComponent(typeof(Camera))]
-public class MatchWidth : MonoBehaviour
+public class MatchHeight : MonoBehaviour
 {
 
     // Set this to the in-world distance between the left & right edges of your scene.
-    public float sceneWidth = 10;
+    public float sceneHeight = 10;
 
     Camera _camera;
     void Start()
@@ -20,7 +20,7 @@ public class MatchWidth : MonoBehaviour
     // even if the screen/window size changes dynamically.
     void Update()
     {
-        float unitsPerPixel = sceneWidth / Screen.width;
+        float unitsPerPixel = sceneHeight / Screen.height;
 
         float desiredHalfHeight = 0.5f * unitsPerPixel * Screen.height;
 

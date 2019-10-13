@@ -20,6 +20,7 @@ public class ManifPassifMvmt : MonoBehaviour
     {
         transform.position = transform.position + new Vector3(xDepart, Random.Range(-4f, 4f));
         force = new Vector2(-xMovement, Random.Range(-10f, 10f));
+        transform.eulerAngles = new Vector3(0, 0, Mathf.Atan(force.y / force.x) * 360 / (2 * Mathf.PI) + 90);
         rb.mass = rb.mass * Random.Range(1, 10) / 5;
         StartCoroutine(ActivateOnTimer());
     }
@@ -30,9 +31,13 @@ public class ManifPassifMvmt : MonoBehaviour
         float speed = Random.Range(10f * speedMin, 10f * speedMax)/2;
         Vector2 maxVelo = new Vector2(speed/100, speed/100);
 
+        transform.eulerAngles = new Vector3(0, 0, Mathf.Atan(force.y / force.x) * 360 / (2 * Mathf.PI) + 90);
         if (rb.velocity.sqrMagnitude < maxVelo.sqrMagnitude)
             rb.AddForce(force + modifier);
-        
+        /*Quaternion quater = new Quaternion();
+        quater.eulerAngles = new Vector3(0, 0, Mathf.Atan(rb.velocity.y / rb.velocity.x) * 360 / (2 * Mathf.PI) + 90);
+        rb.MoveRotation(quater);*/
+
     }
 
     void OnCollisionEnter2D(Collision2D col)
