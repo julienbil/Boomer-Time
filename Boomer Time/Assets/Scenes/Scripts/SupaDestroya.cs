@@ -8,6 +8,7 @@ public class SupaDestroya : MonoBehaviour
 {
     public TextMeshProUGUI player1;
     public TextMeshProUGUI player2;
+    public static bool dead1,dead2;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -18,11 +19,13 @@ public class SupaDestroya : MonoBehaviour
 
         if (other.tag == "Player" && other.gameObject.layer == 9)
         {
+            dead1 = true;
             player1.text = "Mort";
             Destroy(other.gameObject);
         }
         else if (other.tag == "Player" && other.gameObject.layer == 10)
         {
+            dead2 = true;
             player2.text = "Mort";
             Destroy(other.gameObject);
         }
