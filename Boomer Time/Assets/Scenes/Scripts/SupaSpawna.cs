@@ -24,6 +24,11 @@ public class SupaSpawna : MonoBehaviour
     public float eventCd = 0, eventLastSpawn = 0;
     public int eventMinCD = 0, eventMaxCD = 1, eventPosY = -6;
 
+    [Header("Collectibles Spawner Settings")]
+    public GameObject[] collectible;
+    public float collectibleCD = 0, collectibleLastSpawn = 0;
+    public int collectibleMinCD = 0, collectibleMaxCD = 1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,11 +57,18 @@ public class SupaSpawna : MonoBehaviour
             warning.SetActive(true);
             if (Time.time - eventLastSpawn >= eventCd+3)
             {
-                Destroy(Instantiate(events[Random.Range(0, events.Length)], new Vector3(camera.transform.position.x, camera.transform.position.y, 0), Quaternion.identity),8.5f);
+                Destroy(Instantiate(events[Random.Range(0, events.Length)], new Vector3(camera.transform.position.x, camera.transform.position.y, 0), Quaternion.identity),16f);
                 eventCd = Random.Range(eventMinCD, eventMaxCD);
                 eventLastSpawn = Time.time;
             }
         }
-        
+
+        if (Time.time - collectibleLastSpawn >= collectibleCD)
+        {
+            Instantiate(collectible[Random.Range(0, collectible.Length)], new Vector3(xPos, Random.Range(minY, maxY), 0), Quaternion.identity);
+            collectibleCD = Random.Range(collectibleMinCD, collectibleMaxCD);
+            collectibleLastSpawn = Time.time;
+        }
+
     }
 }
