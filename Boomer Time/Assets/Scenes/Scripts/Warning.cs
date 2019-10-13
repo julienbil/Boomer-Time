@@ -65,5 +65,8 @@ public class Warning : MonoBehaviour
     void OnDisable()
     {
         warningTime = false;
+        fading = false;
+        timerStart = false;
+        gameObject.GetComponent<Image>().color = new Color(gameObject.GetComponent<Image>().color.r, gameObject.GetComponent<Image>().color.g, gameObject.GetComponent<Image>().color.b, 0);
     }
 }

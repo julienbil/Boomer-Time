@@ -1690,8 +1690,8 @@ MonoBehaviour:
   start2: {fileID: 188883313}
   text1: {fileID: 1134546828}
   text2: {fileID: 1168783997}
-  ready1: {fileID: 0}
-  ready2: {fileID: 0}
+  ready1: {fileID: 1481874984}
+  ready2: {fileID: 261011099}
   textWaiting: {fileID: 895114474}
 --- !u!1 &1481874981
 GameObject:
