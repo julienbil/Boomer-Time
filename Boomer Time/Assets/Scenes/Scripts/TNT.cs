@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TNT : MonoBehaviour
 {
+    public GameObject prefag;
     // Start is called before the first frame update
     IEnumerator Explode()
     {
@@ -12,12 +13,13 @@ public class TNT : MonoBehaviour
     }
     void Start()
     {
+        transform.parent = null;
         StartCoroutine(Explode());
     }
    
     private void OnDestroy()
     {
-        Debug.Log("Boom.");
+        Destroy(Instantiate(prefag, transform.position, transform.rotation), 0.5f);
     }
     // Update is called once per frame
     void Update()

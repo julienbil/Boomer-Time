@@ -32,7 +32,7 @@ public class Weapon : MonoBehaviour
 
     public void Throw()
     {
-        GameObject dumb = Instantiate(hitbox, player.transform.position, player.transform.rotation);
+        GameObject dumb = Instantiate(hitbox, player.transform.position, player.transform.rotation, player.transform);
         if (player.layer == 9)
         {
             dumb.layer = 8;

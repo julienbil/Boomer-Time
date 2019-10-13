@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1588354474312294194}
   - component: {fileID: 594440671193253678}
   - component: {fileID: 7043329329419569454}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TNT Hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7736034310322216555}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.6640072, y: 0.5412313, z: -34.27972}
+  m_LocalPosition: {x: -1.6640072, y: 0.5412313, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   direction: {x: 0, y: 0, z: 0}
-  force: 4000
+  force: 500
   stunlength: 0
 --- !u!114 &1588354474312294194
 MonoBehaviour:
@@ -112,6 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36dd8406d06d70e41be2c8f4bdadaf0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefag: {fileID: 3497755591951065592, guid: d7fce39c800ff134f8884b405cb8fee0, type: 3}
 --- !u!50 &594440671193253678
 Rigidbody2D:
   serializedVersion: 4
@@ -125,7 +126,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
