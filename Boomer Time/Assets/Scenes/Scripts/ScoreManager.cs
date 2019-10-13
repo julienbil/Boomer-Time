@@ -7,6 +7,7 @@ using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
+    public GameObject player2;
     public float scoreP1 = 0;
     public float scoreP2 = 0;
     public TextMeshProUGUI scoreText1;
@@ -17,7 +18,8 @@ public class ScoreManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      
+        if (!player2.activeSelf)
+            SupaDestroya.dead2 = true;
     }
 
     // Update is called once per frame
@@ -40,23 +42,6 @@ public class ScoreManager : MonoBehaviour
                 SceneManager.LoadScene("Ending");
                 SupaDestroya.dead1 = false;
                 SupaDestroya.dead2 = false;
-            }
-        }
-        if (startMenu.nbeDeJoueur)
-        {
-            if (SupaDestroya.dead1)
-            {
-               /* score = scoreP1 + scoreP2;
-                for (int i = 0; i < 10; i++)
-                {
-                    if (score > startMenu.scoreList1[i])
-                    {
-                        startMenu.scoreList1[i] = score;
-                        i = 10;
-                    }
-                }*/
-                SceneManager.LoadScene("Ending");
-                SupaDestroya.dead1 = false;
             }
         }
     }
@@ -88,8 +73,10 @@ public class ScoreManager : MonoBehaviour
         else
             timerText.text = m.ToString() + ":" + s.ToString() + ":" + decimalT[decimalT.Length - 2] + decimalT[decimalT.Length - 1];
 
-        scoreP1 += 50 * Time.deltaTime;
-        scoreP2 += 50 * Time.deltaTime;
+        if(!SupaDestroya.dead1)
+            scoreP1 += 50 * Time.deltaTime;
+        if(!SupaDestroya.dead2)
+            scoreP2 += 50 * Time.deltaTime;
 
         string score1 = ((int)scoreP1).ToString();
         string score1Norm = "";

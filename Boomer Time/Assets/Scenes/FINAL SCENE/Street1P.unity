@@ -352,75 +352,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 196115334}
   m_CullTransparentMesh: 0
---- !u!1001 &355769171
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 8777631415571038930, guid: 5b59fd3c770b3464ca733597042e35df,
-        type: 3}
-      propertyPath: m_Name
-      value: TremblementDeTerre
-      objectReference: {fileID: 0}
-    - target: {fileID: 8777631415571038933, guid: 5b59fd3c770b3464ca733597042e35df,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.698891
-      objectReference: {fileID: 0}
-    - target: {fileID: 8777631415571038933, guid: 5b59fd3c770b3464ca733597042e35df,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.3798425
-      objectReference: {fileID: 0}
-    - target: {fileID: 8777631415571038933, guid: 5b59fd3c770b3464ca733597042e35df,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -349.28284
-      objectReference: {fileID: 0}
-    - target: {fileID: 8777631415571038933, guid: 5b59fd3c770b3464ca733597042e35df,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8777631415571038933, guid: 5b59fd3c770b3464ca733597042e35df,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8777631415571038933, guid: 5b59fd3c770b3464ca733597042e35df,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8777631415571038933, guid: 5b59fd3c770b3464ca733597042e35df,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8777631415571038933, guid: 5b59fd3c770b3464ca733597042e35df,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 8777631415571038933, guid: 5b59fd3c770b3464ca733597042e35df,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8777631415571038933, guid: 5b59fd3c770b3464ca733597042e35df,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8777631415571038933, guid: 5b59fd3c770b3464ca733597042e35df,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 5b59fd3c770b3464ca733597042e35df, type: 3}
 --- !u!1001 &430790086
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1857,6 +1788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50fb40a324ceb794d9a7abf30fd50548, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player2: {fileID: 658161713}
   scoreP1: 0
   scoreP2: 0
   scoreText1: {fileID: 1333090756}
@@ -2109,6 +2041,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5414614775514502298, guid: 35b76e84bf6613843adb9b0493be1744,
     type: 3}
   m_PrefabInstance: {fileID: 538900812}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &658161713 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8120361907584518970, guid: 139e521bde9f12946a79ac66d1edd16b,
+    type: 3}
+  m_PrefabInstance: {fileID: 731055171}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &681081942
 GameObject:
