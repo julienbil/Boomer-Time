@@ -12,7 +12,7 @@ public class ManifPassifMvmt : MonoBehaviour
     public float xMovement;
     public float xDepart;
     bool tornadeIsActive = false;
-    float timer = 1;
+    float timer = 0.2f;
     Vector2 modifier = new Vector2();
     public GameObject blood;
    
@@ -23,7 +23,7 @@ public class ManifPassifMvmt : MonoBehaviour
         force = new Vector2(-xMovement, Random.Range(-10f, 10f));
         transform.eulerAngles = new Vector3(0, 0, Mathf.Atan(force.y / force.x) * 360 / (2 * Mathf.PI) + 90);
         rb.mass = rb.mass * Random.Range(1, 10) / 5;
-        StartCoroutine(ActivateOnTimer());
+        //StartCoroutine(ActivateOnTimer());
     }
 
 
@@ -38,6 +38,15 @@ public class ManifPassifMvmt : MonoBehaviour
         /*Quaternion quater = new Quaternion();
         quater.eulerAngles = new Vector3(0, 0, Mathf.Atan(rb.velocity.y / rb.velocity.x) * 360 / (2 * Mathf.PI) + 90);
         rb.MoveRotation(quater);*/
+        Debug.Log(tornadeIsActive);
+        if (tornadeIsActive)
+        {
+            modifier = new Vector2(Random.Range(-100f, 100f) * 10, Random.Range(-100f, 100f) * 10);
+        }
+        else
+        {
+            modifier = new Vector2(0, 0);
+        }
 
     }
 

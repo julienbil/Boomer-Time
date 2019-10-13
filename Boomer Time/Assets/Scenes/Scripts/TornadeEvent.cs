@@ -6,7 +6,7 @@ public class TornadeEvent : MonoBehaviour
 {
     GameObject[] joueurs;
     GameObject[] passifs;
-    void Start()
+    void Update()
     {
         joueurs = GameObject.FindGameObjectsWithTag("Player");
         passifs = GameObject.FindGameObjectsWithTag("manifPassifs");
