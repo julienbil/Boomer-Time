@@ -2402,7 +2402,7 @@ PrefabInstance:
     - target: {fileID: 6305390960324258799, guid: c073825b09130c446bd7b82759a2e6a3,
         type: 3}
       propertyPath: events.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6305390960324258799, guid: c073825b09130c446bd7b82759a2e6a3,
         type: 3}
@@ -2417,7 +2417,7 @@ PrefabInstance:
     - target: {fileID: 6305390960324258799, guid: c073825b09130c446bd7b82759a2e6a3,
         type: 3}
       propertyPath: events.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6305390960324258799, guid: c073825b09130c446bd7b82759a2e6a3,
         type: 3}
@@ -2427,7 +2427,7 @@ PrefabInstance:
     - target: {fileID: 6305390960324258799, guid: c073825b09130c446bd7b82759a2e6a3,
         type: 3}
       propertyPath: events.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6305390960324258799, guid: c073825b09130c446bd7b82759a2e6a3,
         type: 3}
@@ -2766,13 +2766,19 @@ PrefabInstance:
         type: 3}
       propertyPath: events.Array.data[1]
       value: 
-      objectReference: {fileID: 8777631415571038930, guid: 5b59fd3c770b3464ca733597042e35df,
+      objectReference: {fileID: 5285318100701695918, guid: a3cecf467098c2243ac45f6d52282c27,
         type: 3}
     - target: {fileID: 6305390960324258799, guid: c073825b09130c446bd7b82759a2e6a3,
         type: 3}
       propertyPath: events.Array.data[2]
       value: 
-      objectReference: {fileID: 8777631415571038930, guid: 5b59fd3c770b3464ca733597042e35df,
+      objectReference: {fileID: 3101886206506019122, guid: 5203dd422d9eef2479e00ddcc723cce7,
+        type: 3}
+    - target: {fileID: 6305390960324258799, guid: c073825b09130c446bd7b82759a2e6a3,
+        type: 3}
+      propertyPath: events.Array.data[3]
+      value: 
+      objectReference: {fileID: 8749727762391310669, guid: bab98487ff234244da8b067f01b93d1a,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c073825b09130c446bd7b82759a2e6a3, type: 3}
@@ -2925,6 +2931,7 @@ MonoBehaviour:
   scoreP2: 0
   scoreText1: {fileID: 256325067}
   scoreText2: {fileID: 1104529377}
+  time: 0
 --- !u!1 &1789792925 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5414614775514502298, guid: 35b76e84bf6613843adb9b0493be1744,
