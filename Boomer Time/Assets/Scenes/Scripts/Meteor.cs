@@ -21,7 +21,7 @@ public class Meteor : MonoBehaviour
 
     void Start()
     {
-        this.transform.position += new Vector3(Random.Range(-500, 500)/100, Random.Range(-300, 300)/100);
+        this.transform.position += new Vector3(Random.Range(-400, 700)/100, Random.Range(-300, 300)/100);
         debutTime = Time.realtimeSinceStartup;
         sr.sprite = sprites[0];
         this.transform.localScale += new Vector3(0.01f * radiusSpeed, 0.01f * radiusSpeed, 0);

@@ -12,6 +12,7 @@ TagManager:
   - bb hitbox
   - misc
   - meteor
+  - tremblement
   layers:
   - Default
   - TransparentFX
