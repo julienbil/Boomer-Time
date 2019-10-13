@@ -35,7 +35,7 @@ public class FishRain : MonoBehaviour
 
             }
 
-            enemyCd = Random.Range(2, 4);
+            enemyCd = Random.Range(200, 400)/100f;
             enemyLastSpawn = Time.time;
         }
     }

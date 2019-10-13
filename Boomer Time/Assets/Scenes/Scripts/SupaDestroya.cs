@@ -10,7 +10,7 @@ public class SupaDestroya : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "manifPassifs" || other.tag == "misc" || other.tag == "fish")
+        if (other.tag == "manifPassifs" || other.tag == "misc" || other.tag == "fish" || other.tag == "Powerup")
         {
                 Destroy(other.gameObject);
         }

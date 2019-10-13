@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 703389609713016026}
   - component: {fileID: 703389609713016025}
   - component: {fileID: 703389609713016027}
+  - component: {fileID: 112942556188655045}
   m_Layer: 0
   m_Name: Truck Pup
   m_TagString: Powerup
@@ -69,7 +70,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 667c8de593badec4896f4599de6c61ef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -97,3 +98,15 @@ CapsuleCollider2D:
   m_Offset: {x: 0.00000021036932, y: 0}
   m_Size: {x: 0.2735492, y: 0.6399999}
   m_Direction: 0
+--- !u!114 &112942556188655045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703389609713016024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1270b722cc70208429b31d478ac81344, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

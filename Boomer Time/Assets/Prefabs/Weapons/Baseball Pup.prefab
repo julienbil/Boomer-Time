@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 252317024168124077}
   - component: {fileID: 252317024168124078}
   - component: {fileID: 252317024168124067}
+  - component: {fileID: 3617300371663605420}
   m_Layer: 0
   m_Name: Baseball Pup
   m_TagString: Weapon
@@ -69,7 +70,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: f0f8a7960f2243d4fb4a43a5d61c9506, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -107,3 +108,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.09922728, y: 0.32}
   m_EdgeRadius: 0
+--- !u!114 &3617300371663605420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252317024168124079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1270b722cc70208429b31d478ac81344, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
