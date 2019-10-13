@@ -78,10 +78,18 @@ public class ScoreManager : MonoBehaviour
     void UpdateScore()
     {
         time += Time.deltaTime;
-        timerText.text = time.ToString("F");
+        int m, s, d;
+        m = (int)(time / 60f);
+        s = (int)(time%60);
+        d = (int)(time * 100f);
+        string decimalT = d.ToString();
+        if(decimalT.Length==1)
+            timerText.text = m.ToString() + ":" + s.ToString() + ":" + decimalT[decimalT.Length - 1];
+        else
+            timerText.text = m.ToString() + ":" + s.ToString() + ":" + decimalT[decimalT.Length - 2] + decimalT[decimalT.Length - 1];
 
-        scoreP1 += 10 * Time.deltaTime;
-        scoreP2 += 10 * Time.deltaTime;
+        scoreP1 += 50 * Time.deltaTime;
+        scoreP2 += 50 * Time.deltaTime;
 
         string score1 = ((int)scoreP1).ToString();
         string score1Norm = "";

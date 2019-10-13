@@ -44,14 +44,14 @@ public class Scroll : MonoBehaviour
             {
                 rotate += rotateSpeed;
                 camera.transform.eulerAngles = new Vector3(0, 0, rotate);
-                if (rotate >= 20)
+                if (rotate >= 10)
                     signe = false;
             }
             else if(!signe)
             {
                 rotate -= rotateSpeed;
                 camera.transform.eulerAngles = new Vector3(0, 0, rotate);
-                if (rotate <= -20)
+                if (rotate <= -10)
                     signe = true;
             }
         }
