@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5610749145251396916}
   - component: {fileID: 2126704904016524138}
   - component: {fileID: -3147650266627866998}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: TrottoirCrack1Tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -73,7 +73,7 @@ public class SupaSpawna : MonoBehaviour
             warning.SetActive(true);
             if (Time.time - eventLastSpawn >= eventCd+3)
             {
-                Destroy(Instantiate(events[Random.Range(0, events.Length)], new Vector3(camera.transform.position.x, camera.transform.position.y, 0), Quaternion.identity),16f);
+                Destroy(Instantiate(events[Random.Range(0, events.Length)], new Vector3(camera.transform.position.x, camera.transform.position.y, 0), Quaternion.identity, transform),16f);
                 eventCd = Random.Range(eventMinCD, eventMaxCD);
                 eventLastSpawn = Time.time;
             }

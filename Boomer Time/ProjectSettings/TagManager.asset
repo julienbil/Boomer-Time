@@ -11,6 +11,7 @@ TagManager:
   - Powerup
   - bb hitbox
   - misc
+  - fish
   - meteor
   layers:
   - Default
@@ -26,8 +27,8 @@ TagManager:
   - Player2
   - Weapon2
   - Wall
-  - 
-  - 
+  - Fish
+  - trottoire
   - 
   - 
   - 
