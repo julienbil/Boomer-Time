@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SupaSpawna : MonoBehaviour
 {
+    public GameObject camera;
     public int maxY = 3, minY = -3;
     public float xPos = 11;
 
@@ -16,6 +17,12 @@ public class SupaSpawna : MonoBehaviour
     public GameObject[] powerUp;
     public float powerUpCd = 0, powerUpLastSpawn = 0;
     public int powerUpMinCD = 8, powerUpMaxCD = 15;
+
+    [Header("Event Spawner Settings")]
+    public GameObject warning;
+    public GameObject[] events;
+    public float eventCd = 0, eventLastSpawn = 0;
+    public int eventMinCD = 0, eventMaxCD = 1, eventPosY = -6;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +46,15 @@ public class SupaSpawna : MonoBehaviour
             powerUpCd = Random.Range(powerUpMinCD, powerUpMaxCD);
             powerUpLastSpawn = Time.time;
         }
-
+        if (Time.time - eventLastSpawn >= eventCd)
+        {
+            warning.SetActive(true);
+            if (Time.time - eventLastSpawn >= eventCd+3)
+            {
+                Instantiate(events[Random.Range(0, events.Length)], new Vector3(camera.transform.position.x, camera.transform.position.y, 0), Quaternion.identity);
+                eventCd = Random.Range(eventMinCD, eventMaxCD);
+                eventLastSpawn = Time.time;
+            }
+        }
     }
 }
