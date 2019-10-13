@@ -156,7 +156,7 @@ public class PowerUps : MonoBehaviour
             playmov.driving = true;
             gameObject.GetComponents<CapsuleCollider2D>()[0].enabled = false;
             gameObject.GetComponents<CapsuleCollider2D>()[1].enabled = true;
-            rb.bodyType = RigidbodyType2D.Kinematic;
+            //rb.bodyType = RigidbodyType2D.Kinematic;
             playmov.rb.velocity = Vector3.zero;
             playmov.speed = 2;
             gameObject.transform.localScale = new Vector3(2.2f, 2.2f, 2.2f);

@@ -6,7 +6,7 @@ public class Scroll : MonoBehaviour
 {
     public float speed;
     public GameObject camera;
-    public GameObject destroyer1, destroyer2, destroyer3, destroyer4;
+    public GameObject destroyer1, destroyer2, destroyer3, destroyer4, wall;
     public GameObject spawner;
 
     // Start is called before the first frame update
@@ -23,6 +23,7 @@ public class Scroll : MonoBehaviour
         destroyer2.transform.position += new Vector3(speed * Time.deltaTime, 0, 0);
         destroyer3.transform.position += new Vector3(speed * Time.deltaTime, 0, 0);
         destroyer4.transform.position += new Vector3(speed * Time.deltaTime, 0, 0);
+        wall.transform.position += new Vector3(speed * Time.deltaTime, 0, 0);
         spawner.GetComponent<SupaSpawna>().xPos += speed * Time.deltaTime;
     }
 }
