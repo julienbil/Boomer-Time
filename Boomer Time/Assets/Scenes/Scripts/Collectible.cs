@@ -21,11 +21,13 @@ public class Collectible : MonoBehaviour
         {
             gm.GetComponent<ScoreManager>().AddPoints(1, points);
             Destroy(gameObject);
+            FindObjectOfType<AudioMAnager>().Play("collectible");
         }
         else if(collider.gameObject.layer == 10)
         {
             gm.GetComponent<ScoreManager>().AddPoints(2, points);
             Destroy(gameObject);
+            FindObjectOfType<AudioMAnager>().Play("collectible");
         }
     }
 }

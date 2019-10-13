@@ -20,6 +20,7 @@ public class TNT : MonoBehaviour
     private void OnDestroy()
     {
         Destroy(Instantiate(prefag, transform.position, transform.rotation), 0.5f);
+        FindObjectOfType<AudioMAnager>().Play("explosion");
     }
     // Update is called once per frame
     void Update()

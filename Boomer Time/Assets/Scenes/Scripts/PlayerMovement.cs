@@ -84,6 +84,7 @@ public class PlayerMovement : MonoBehaviour
             if (gameObject.GetComponent<PlayerWeapon>().currentWeapon == "Baseball")
             {
                 gameObject.GetComponent<PlayerWeapon>().baseball.GetComponent<Weapon>().Attack();
+                FindObjectOfType<AudioMAnager>().Play("baseballhit");
             }
             if (gameObject.GetComponent<PlayerWeapon>().currentWeapon == "Torch")
             {
@@ -92,6 +93,7 @@ public class PlayerMovement : MonoBehaviour
             if (gameObject.GetComponent<PlayerWeapon>().currentWeapon == "Hammer")
             {
                 gameObject.GetComponent<PlayerWeapon>().hammer.GetComponent<Weapon>().Attack();
+                FindObjectOfType<AudioMAnager>().Play("hammerhit");
             }
             if (gameObject.GetComponent<PlayerWeapon>().currentWeapon == "TNT")
             {
@@ -100,6 +102,7 @@ public class PlayerMovement : MonoBehaviour
             if (gameObject.GetComponent<PlayerWeapon>().currentWeapon == "Grenade Launcher")
             {
                 gameObject.GetComponent<PlayerWeapon>().grenadelauncher.GetComponent<Weapon>().Throw();
+                FindObjectOfType<AudioMAnager>().Play("grenadelauncher");
             }
         }
 

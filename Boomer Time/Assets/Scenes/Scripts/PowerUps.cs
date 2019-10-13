@@ -40,6 +40,7 @@ public class PowerUps : MonoBehaviour
         if (other.tag == "Weapon")
         {
             EquipWeapon(other.name);
+            FindObjectOfType<AudioMAnager>().Play("weaponpick");
         }
         if (other.tag == "Weapon" || other.tag == "Powerup")
         Destroy(other.gameObject);
