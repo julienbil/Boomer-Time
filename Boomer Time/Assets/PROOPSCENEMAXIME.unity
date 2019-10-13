@@ -1760,6 +1760,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6305390960324258798, guid: c073825b09130c446bd7b82759a2e6a3,
+        type: 3}
+      propertyPath: m_TagString
+      value: cameraHolder
+      objectReference: {fileID: 0}
     - target: {fileID: 6305390960324258792, guid: c073825b09130c446bd7b82759a2e6a3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2214,6 +2219,11 @@ PrefabInstance:
         type: 3}
       propertyPath: variation
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6305390960324258794, guid: c073825b09130c446bd7b82759a2e6a3,
+        type: 3}
+      propertyPath: rotateSpeed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6305390960324258799, guid: c073825b09130c446bd7b82759a2e6a3,
         type: 3}
