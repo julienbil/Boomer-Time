@@ -10,6 +10,7 @@ TagManager:
   - Weapon
   - Powerup
   - bb hitbox
+  - misc
   layers:
   - Default
   - TransparentFX

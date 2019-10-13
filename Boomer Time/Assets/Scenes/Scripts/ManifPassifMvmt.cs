@@ -14,6 +14,7 @@ public class ManifPassifMvmt : MonoBehaviour
     bool tornadeIsActive = false;
     float timer = 1;
     Vector2 modifier = new Vector2();
+    public GameObject blood;
    
 
     private void Start()
@@ -49,9 +50,17 @@ public class ManifPassifMvmt : MonoBehaviour
             rb.velocity = new Vector2(0, -rb.velocity.y);
             rb.AddForce(force);
         }
-        
-        
+
+        if (col.gameObject.name == "Player 1" || col.gameObject.name == "Player 2")
+        {
+            if (col.gameObject.GetComponent<PowerUps>().isLawnmower)
+            {
+                Instantiate(blood, gameObject.transform.position, gameObject.transform.rotation);
+                Destroy(gameObject);
+            }
+        }
     }
+
     private IEnumerator ActivateOnTimer()
     {
         while (true)

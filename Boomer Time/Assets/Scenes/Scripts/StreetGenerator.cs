@@ -260,15 +260,16 @@ public class StreetGenerator : MonoBehaviour
             tempMap[tempMap.GetLength(0)-1, i] = Instantiate(differentTiles[tempMapData[tempMapData.GetLength(0)-1, i]]);
             tempMap[tempMap.GetLength(0) - 1, i].transform.position = transform.position + new Vector3(positionX / 1.57f, -actualY / 1.57f, 37);
         }
-        positionX += map[0, 0].transform.localScale.x;
-        Debug.Log(positionX);
+        positionX += 2;
+        //positionX += map[0, 0].transform.localScale.x;
+        //Debug.Log(positionX);
     }
 
     void DestroyUseless()
     {
         for (int i = 0; i < mapData.GetLength(1) - 1; i++)
         {
-            Destroy(map[0, i]);
+            Destroy(map[0, i].gameObject);
         }
     }
 
