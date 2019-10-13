@@ -28,11 +28,11 @@ public class PowerUps : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.name == "Lawnmower Pup")
+        if (other.name == "Lawnmower Pup" || other.name == "Lawnmower Pup(Clone)")
         {
             TurnIntoLawnmower();
         }
-        if (other.name == "Truck Pup")
+        if (other.name == "Truck Pup" || other.name == "Truck Pup(Clone)")
         {
             TurnIntoTruck();
         }
@@ -57,19 +57,29 @@ public class PowerUps : MonoBehaviour
     void EquipWeapon(string weaponname)
     {
         UnequipWeapon(pWeapon.currentWeapon);
-        if (weaponname == "Baseball Pup")
+        if (weaponname == "Baseball Pup" || weaponname == "Baseball Pup(Clone)")
         {
+            
             pWeapon.currentWeapon = "Baseball";
+            pWeapon.baseball.GetComponent<Weapon>().durability = 10;
             pWeapon.baseball.SetActive(true);
         }
-        if (weaponname == "Torch")
+        if (weaponname == "Torch Pup" || weaponname == "Torch Pup(Clone)")
         {
             pWeapon.currentWeapon = "Torch";
+            pWeapon.torch.GetComponent<Weapon>().durability = 5;
             pWeapon.torch.SetActive(true);
         }
-        if (weaponname == "Hammer")
+        if (weaponname == "Hammer Pup" || weaponname == "Hammer Pup(Clone)")
         {
             pWeapon.currentWeapon = "Hammer";
+            pWeapon.hammer.GetComponent<Weapon>().durability = 5;
+            pWeapon.hammer.SetActive(true);
+        }
+        if (weaponname == "TNT Pup" || weaponname == "TNT Pup(Clone)")
+        {
+            pWeapon.currentWeapon = "TNT";
+            pWeapon.hammer.GetComponent<Weapon>().durability = 1;
             pWeapon.hammer.SetActive(true);
         }
     }

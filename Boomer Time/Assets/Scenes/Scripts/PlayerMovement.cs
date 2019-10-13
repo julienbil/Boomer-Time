@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public bool dashing;
     public bool driving;
     public bool isStunned;
+    public bool cooldown;
     public int dashspeed;
     public Vector2 maxVelo;
     public string horizon, verti, a, x;
@@ -23,6 +24,12 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    IEnumerator Cooldown()
+    {
+        cooldown = true;
+        yield return new WaitForSeconds(0.4f);
+        cooldown = false;
+    }
 
     IEnumerator Stunned(float length)
     {
@@ -55,11 +62,20 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown(x))
+        if (Input.GetButtonDown(x) && !isStunned && !cooldown)
         {
+            StartCoroutine(Cooldown());
             if (gameObject.GetComponent<PlayerWeapon>().currentWeapon == "Baseball")
             {
                 gameObject.GetComponent<PlayerWeapon>().baseball.GetComponent<Weapon>().Attack();
+            }
+            if (gameObject.GetComponent<PlayerWeapon>().currentWeapon == "Torch")
+            {
+                gameObject.GetComponent<PlayerWeapon>().torch.GetComponent<Weapon>().Attack();
+            }
+            if (gameObject.GetComponent<PlayerWeapon>().currentWeapon == "Hammer")
+            {
+                gameObject.GetComponent<PlayerWeapon>().hammer.GetComponent<Weapon>().Attack();
             }
         }
 

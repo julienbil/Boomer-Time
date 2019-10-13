@@ -5,16 +5,14 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     public string weaponname;
-    public float force;
-    public Sprite sprite;
-    public Rigidbody2D rb;
     public GameObject hitbox;
     public GameObject player;
-    public int distance;
+    public int durability;
 
     // Start is called before the first frame update
     void Start()
     {
+
     }
 
     public void Attack()
@@ -29,17 +27,17 @@ public class Weapon : MonoBehaviour
             dumb.layer = 11;
         }
         Destroy(dumb, 0.2f);
+        durability--;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (durability <= 0)
+        {
+            durability = 0;
+            gameObject.SetActive(false);
+            player.GetComponent<PlayerWeapon>().currentWeapon = "None";
+        }
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("hello");
-    }
-
-
 }

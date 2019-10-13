@@ -94,14 +94,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponname: Golden Hammer
-  force: 1000
-  sprite: {fileID: 21300000, guid: f0f8a7960f2243d4fb4a43a5d61c9506, type: 3}
-  rb: {fileID: 0}
-  hitbox: {fileID: 0}
-  player: {fileID: 0}
-  parentCollider: {fileID: 0}
-  weaponCollider: {fileID: 0}
-  distance: 0
+  hitbox: {fileID: 8298713929932197122, guid: 91d1a837a0beb7546a2de08c5c64f6b8, type: 3}
+  player: {fileID: 9199179691115068340}
+  durability: 0
 --- !u!1 &6409227968908674982
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,14 +271,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponname: Torch
-  force: 50
-  sprite: {fileID: 21300000, guid: f0f8a7960f2243d4fb4a43a5d61c9506, type: 3}
-  rb: {fileID: 0}
-  hitbox: {fileID: 0}
-  player: {fileID: 0}
-  parentCollider: {fileID: 0}
-  weaponCollider: {fileID: 0}
-  distance: 0
+  hitbox: {fileID: 5217861327722159209, guid: 6e28b2834d799c842a0dd720c0e79d51, type: 3}
+  player: {fileID: 9199179691115068340}
+  durability: 0
 --- !u!1 &9199179691115068340
 GameObject:
   m_ObjectHideFlags: 0
@@ -418,6 +408,7 @@ MonoBehaviour:
   dashing: 0
   driving: 0
   isStunned: 0
+  cooldown: 0
   dashspeed: 4
   maxVelo: {x: 2, y: 2}
   horizon: Horizontal1
@@ -475,10 +466,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentWeapon: None
   baseball: {fileID: 3620028063651731534}
-  torch: {fileID: 0}
-  hammer: {fileID: 0}
-  tnt: {fileID: 0}
-  weaponCollider: {fileID: 0}
+  torch: {fileID: 8278846980772130778}
+  hammer: {fileID: 2914341487313677666}
+  tnt: {fileID: 6409227968908674982}
 --- !u!58 &3265590791760609913
 CircleCollider2D:
   m_ObjectHideFlags: 0
