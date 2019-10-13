@@ -26,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2934843865518740740}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalPosition: {x: 0.122, y: 0.099, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7367321147222434814}
   m_RootOrder: 0
@@ -459,6 +459,7 @@ MonoBehaviour:
   isNormal: 1
   source: {fileID: 0}
   powerupsound: {fileID: 8300000, guid: 3649ae77caae6ae4a9837e34f6583963, type: 3}
+  anim: {fileID: 0}
 --- !u!114 &7426824716427291845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -653,7 +654,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2819315824602478202
 Transform:
   m_ObjectHideFlags: 0
@@ -662,8 +663,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8579135646082742811}
   m_LocalRotation: {x: -0, y: -0, z: 0.70705986, w: 0.70715374}
-  m_LocalPosition: {x: 0.14800005, y: 0.025, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalPosition: {x: 0.11, y: 0.068, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0.5}
   m_Children: []
   m_Father: {fileID: 7367321147222434814}
   m_RootOrder: 4
@@ -730,6 +731,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponname: Grenade Launcher
-  hitbox: {fileID: 7736034310322216555, guid: 012f3e84207b76e49a9ff038d0fc3b21, type: 3}
+  hitbox: {fileID: 6228078168426846082, guid: 190f70d7e833fe342accda9f20c4e47a, type: 3}
   player: {fileID: 7367321147222434813}
   durability: 0

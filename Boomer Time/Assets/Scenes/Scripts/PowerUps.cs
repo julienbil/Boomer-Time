@@ -13,7 +13,7 @@ public class PowerUps : MonoBehaviour
     public bool isNormal;
     public AudioSource source;
     public AudioClip powerupsound;
-
+    public Animator anim;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +22,7 @@ public class PowerUps : MonoBehaviour
         source.clip = powerupsound;
         playmov = gameObject.GetComponent<PlayerMovement>();
         rb = gameObject.GetComponent<Rigidbody2D>();
+        anim = gameObject.GetComponent<Animator>();
     }
 
 
@@ -154,6 +155,9 @@ public class PowerUps : MonoBehaviour
         if (isLawnmower)
         {
             playmov.driving = true;
+            anim.SetBool("isLawnmower", true);
+            anim.SetBool("isNormal", false);
+            anim.SetBool("isTruck", false);
             gameObject.GetComponents<CapsuleCollider2D>()[0].enabled = false;
             gameObject.GetComponents<CapsuleCollider2D>()[1].enabled = true;
             rb.bodyType = RigidbodyType2D.Kinematic;
@@ -163,6 +167,9 @@ public class PowerUps : MonoBehaviour
         }
         if (isTruck)
         {
+            anim.SetBool("isLawnmower", false);
+            anim.SetBool("isNormal", false);
+            anim.SetBool("isTruck", true);
             playmov.driving = true;
             gameObject.GetComponents<CapsuleCollider2D>()[1].enabled = false;
             gameObject.GetComponents<CapsuleCollider2D>()[0].enabled = true;
@@ -175,6 +182,9 @@ public class PowerUps : MonoBehaviour
         }
         if (isNormal)
         {
+            anim.SetBool("isLawnmower", false);
+            anim.SetBool("isTruck", false);
+            anim.SetBool("isNormal", true);
             playmov.driving = false;
             gameObject.GetComponents<CapsuleCollider2D>()[0].enabled = false;
             gameObject.GetComponents<CapsuleCollider2D>()[1].enabled = false;

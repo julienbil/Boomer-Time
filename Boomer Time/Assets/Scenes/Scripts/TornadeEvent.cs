@@ -14,6 +14,7 @@ public class TornadeEvent : MonoBehaviour
     private void Start()
     {
         image.enabled = false;
+        animator = GetComponent<Animator>();
         joueurs = GameObject.FindGameObjectsWithTag("Player");
         passifs = GameObject.FindGameObjectsWithTag("manifPassifs");
         foreach (GameObject player in joueurs)

@@ -78,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown(x) && !isStunned && !cooldown)
+        if (Input.GetButtonDown(x) && !isStunned && !cooldown && !driving)
         {
             StartCoroutine(Cooldown());
             if (gameObject.GetComponent<PlayerWeapon>().currentWeapon == "Baseball")
@@ -134,7 +134,6 @@ public class PlayerMovement : MonoBehaviour
         {
             Dash();
         }
-
         //Vector3 lookDirection = new Vector3(0,0, Input.GetAxisRaw("Vertical") + Input.GetAxisRaw("Horizontal"));
         //transform.rotation = Quaternion.LookRotation(lookDirection);
         if ((Input.GetAxisRaw(verti) + Input.GetAxisRaw(horizon) != 0 && canMove) || isBurning)
