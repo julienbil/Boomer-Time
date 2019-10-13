@@ -5,13 +5,13 @@ using UnityEngine;
 public class SupaSpawna : MonoBehaviour
 {
     public GameObject camera;
-    public int maxY = 3, minY = -3;
+    public int maxY = 3, minY = -3, variation = 0;
     public float xPos = 11;
 
     [Header("Enemy Spawner Settings")]
     public GameObject enemy;
-    public float enemyCd=0,enemyLastSpawn=0;
-    public int enemyMinCD = 1, enemyMaxCD = 3, enemyMin=1, enemyMax=10;
+    public float enemyCd=0,enemyLastSpawn=0, enemyMin=15f, enemyMax=45f, enemyMaxScale = 2;
+    public int enemyMinCD = 1, enemyMaxCD = 3;
 
     [Header("PowerUp Spawner Settings")]
     public GameObject[] powerUp;
@@ -38,10 +38,26 @@ public class SupaSpawna : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (enemyMin < 30)
+        {
+            enemyMin = 15 + (++variation * (15f / 5000));
+            enemyMax = 45 + (++variation * (15f / 5000));
+            enemyMaxScale = 2 + (++variation * (0.5f / 5000));
+        }
+        else if (enemyMin > 30)
+        {
+            enemyMin = 30;
+            enemyMax = 70;
+        }
+
         if (Time.time - enemyLastSpawn >= enemyCd)
         {
-            for (int i = 0; i < Random.Range(enemyMin, enemyMax); i++)
-                Instantiate(enemy, new Vector3(xPos, Random.Range(minY*100,maxY*100)/100, 0), Quaternion.identity);
+            for (int i = 0; i < Random.Range((int)enemyMin, (int)enemyMax); i++)
+            {
+                GameObject go = Instantiate(enemy, new Vector3(xPos, Random.Range(minY*100,maxY*100)/100, 0), Quaternion.identity);
+                go.transform.localScale = new Vector3(Random.Range(2*100,enemyMaxScale*100)/100, Random.Range(2*100,enemyMaxScale*100)/100, 1);
+            }
+
             enemyCd = Random.Range(enemyMinCD, enemyMaxCD);
             enemyLastSpawn = Time.time;
         }

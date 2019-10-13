@@ -16,7 +16,7 @@ public class StreetGenerator : MonoBehaviour
     public int[,] mapData;
     public GameObject[,] map;
 
-    public float timer;
+    public float timer=4.25f, speed=4.25f, variation=0, divider=2;
 
     private float positionX;
 
@@ -36,11 +36,20 @@ public class StreetGenerator : MonoBehaviour
         StartCoroutine(ActivateOnTimer());
     }
 
+    private void Update()
+    {
+        if (speed > 1.10f)
+            speed = timer - (Mathf.Pow(++variation, 1 / divider) / 20);
+        else if (speed < 1.10f)
+            speed = 1.10f;
+
+    }
+
     private IEnumerator ActivateOnTimer()
     {
         while (true)
         {
-            yield return new WaitForSeconds(timer);
+            yield return new WaitForSeconds(speed);
             UpdateStreet();
         }
     }
