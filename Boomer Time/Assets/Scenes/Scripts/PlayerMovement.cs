@@ -148,7 +148,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (rb.velocity.sqrMagnitude < maxVelo.sqrMagnitude && isBurning && !driving)
         {
-            rb.AddForce(burningVelo);
+            rb.AddForce(burningVelo*2);
         }
         if (rb.velocity.sqrMagnitude < maxVelo.sqrMagnitude && canMove && !driving)
         {
