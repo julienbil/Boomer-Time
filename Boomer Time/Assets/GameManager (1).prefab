@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6305390960324258792}
   - component: {fileID: 6305390960324258799}
-  - component: {fileID: 6305390960324258793}
   - component: {fileID: 6305390960324258794}
   m_Layer: 0
   m_Name: GameManager (1)
@@ -45,29 +44,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a8ae65d97ecf4f4f8cf0465fc89696c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 8137385173084149035, guid: 20814506b8a8b644f9110f2b34744ee8, type: 3}
-  cd: 0
-  lastSpawn: 0
-  xPos: 11
+  camera: {fileID: 0}
   maxY: 3
   minY: -3
-  minCD: 1
-  maxCD: 3
+  xPos: 11
+  enemy: {fileID: 8137385173084149035, guid: 20814506b8a8b644f9110f2b34744ee8, type: 3}
+  enemyCd: 0
+  enemyLastSpawn: 0
+  enemyMinCD: 1
+  enemyMaxCD: 3
   enemyMin: 1
   enemyMax: 75
---- !u!114 &6305390960324258793
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6305390960324258798}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd59ccb82f3f68b4e97b99c26bbe9718, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ffyyf: {fileID: 3101886206506019122, guid: 5203dd422d9eef2479e00ddcc723cce7, type: 3}
+  powerUp: []
+  powerUpCd: 0
+  powerUpLastSpawn: 0
+  powerUpMinCD: 8
+  powerUpMaxCD: 15
+  warning: {fileID: 0}
+  events: []
+  eventCd: 0
+  eventLastSpawn: 0
+  eventMinCD: 0
+  eventMaxCD: 1
+  eventPosY: -6
 --- !u!114 &6305390960324258794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,7 +81,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.3
   camera: {fileID: 0}
-  destroyer: {fileID: 0}
-  mur: {fileID: 0}
-  mur2: {fileID: 0}
+  destroyer1: {fileID: 0}
+  destroyer2: {fileID: 0}
+  destroyer3: {fileID: 0}
+  destroyer4: {fileID: 0}
   spawner: {fileID: 6305390960324258798}

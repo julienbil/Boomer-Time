@@ -147,11 +147,6 @@ public class PlayerMovement : MonoBehaviour
                 transform.eulerAngles = new Vector3(0, 0, Mathf.Atan(Input.GetAxis(verti) / Input.GetAxis(horizon)) * 360 / (2 * Mathf.PI) + 90);
         }
 
-        //Debug.Log(Input.GetAxisRaw("Vertical"));
-        //Debug.Log(Input.GetAxisRaw("Horizontal"));
-        //Debug.Log(Input.GetAxisRaw("Vertical") / Input.GetAxisRaw("Horizontal"));
-        //Debug.Log(Mathf.Atan(Input.GetAxisRaw("Vertical") / Input.GetAxisRaw("Horizontal")) * 360 / (2 * Mathf.PI));
-
         if (rb.velocity.sqrMagnitude < maxVelo.sqrMagnitude && isBurning && !driving)
         {
             rb.AddForce(burningVelo);

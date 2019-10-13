@@ -40,6 +40,7 @@ public class SupaSpawna : MonoBehaviour
             enemyCd = Random.Range(enemyMinCD, enemyMaxCD);
             enemyLastSpawn = Time.time;
         }
+        
         if (Time.time - powerUpLastSpawn >= powerUpCd)
         {
             Instantiate(powerUp[Random.Range(0,powerUp.Length)], new Vector3(xPos, Random.Range(-3, 3), 0), Quaternion.identity);
@@ -51,10 +52,11 @@ public class SupaSpawna : MonoBehaviour
             warning.SetActive(true);
             if (Time.time - eventLastSpawn >= eventCd+3)
             {
-                Instantiate(events[Random.Range(0, events.Length)], new Vector3(camera.transform.position.x, camera.transform.position.y, 0), Quaternion.identity);
+                Destroy(Instantiate(events[Random.Range(0, events.Length)], new Vector3(camera.transform.position.x, camera.transform.position.y, 0), Quaternion.identity),8.5f);
                 eventCd = Random.Range(eventMinCD, eventMaxCD);
                 eventLastSpawn = Time.time;
             }
         }
+        
     }
 }

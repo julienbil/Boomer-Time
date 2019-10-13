@@ -62,7 +62,6 @@ public class Meteor : MonoBehaviour
         {
             yield return new WaitForSeconds(0.01f);
             this.transform.Translate(Vector3.down * Time.deltaTime * animationSpeed);
-            Debug.Log("descend");
         }
     }
 }

@@ -117,7 +117,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65534ccb227484d41a8bb83e8303e195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yDepart: -7
+  yDepart: -17
+  speedY: 6
   rb: {fileID: 3101886206506019121}
 --- !u!114 &-8581875542597291867
 MonoBehaviour:

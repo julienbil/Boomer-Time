@@ -15,6 +15,7 @@ public class ManifPassifMvmt : MonoBehaviour
     float timer = 1f;
     Vector2 modifier = new Vector2();
     public GameObject blood;
+    float lastCheck = 0;
    
 
     private void Start()
@@ -23,7 +24,7 @@ public class ManifPassifMvmt : MonoBehaviour
         force = new Vector2(-xMovement, Random.Range(-10f, 10f));
         transform.eulerAngles = new Vector3(0, 0, Mathf.Atan(force.y / force.x) * 360 / (2 * Mathf.PI) + 90);
         rb.mass = rb.mass * Random.Range(1, 10) / 5;
-        StartCoroutine(ActivateOnTimer());
+        //StartCoroutine(ActivateOnTimer());
     }
 
 
@@ -31,27 +32,28 @@ public class ManifPassifMvmt : MonoBehaviour
     {
         float speed = Random.Range(10f * speedMin, 10f * speedMax)/2;
         Vector2 maxVelo = new Vector2(speed/100, speed/100);
-
         transform.eulerAngles = new Vector3(0, 0, Mathf.Atan(force.y / force.x) * 360 / (2 * Mathf.PI) + 90);
         if (rb.velocity.sqrMagnitude < maxVelo.sqrMagnitude)
             rb.AddForce(force + modifier);
+        
         /*Quaternion quater = new Quaternion();
         quater.eulerAngles = new Vector3(0, 0, Mathf.Atan(rb.velocity.y / rb.velocity.x) * 360 / (2 * Mathf.PI) + 90);
         rb.MoveRotation(quater);*/
-        Debug.Log(tornadeIsActive);
-        /*
-        if (tornadeIsActive)
-        {
-            modifier = new Vector2(Random.Range(-100f, 100f) * 10, Random.Range(-100f, 100f) * 10);
-        }
-        else
-        {
-            modifier = new Vector2(0, 0);
-        }
-        */
+        
+
+            if (tornadeIsActive)
+            {
+                modifier = new Vector2(Random.Range(-100f, 100f) * 10, Random.Range(-100f, 100f) * 10);
+            }
+            else
+            {
+                modifier = new Vector2(0, 0);
+            }
+        
+        
 
     }
-
+    
     void OnCollisionEnter2D(Collision2D col)
     {
         
@@ -72,6 +74,7 @@ public class ManifPassifMvmt : MonoBehaviour
         }
     }
 
+    /*
     private IEnumerator ActivateOnTimer()
     {
         while (true)
@@ -81,12 +84,13 @@ public class ManifPassifMvmt : MonoBehaviour
             {
                 modifier = new Vector2(Random.Range(-100f, 100f) * 10, Random.Range(-100f, 100f) * 10);
             }
-            else
+            else if(modifier != new Vector2(0, 0))
             {
                 modifier = new Vector2(0, 0);
             }
         }
     }
+    */
 
     public void TornadeActive()
     {

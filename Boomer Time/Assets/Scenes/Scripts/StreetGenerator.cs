@@ -78,7 +78,6 @@ public class StreetGenerator : MonoBehaviour
                 {
                     if (randomType >= pourActuel && randomType < fixedPour)
                     {
-                        Debug.Log(k);
                         tempMapData[tempMapData.GetLength(0) - 1, i] = k + 6;
                     }
                     pourActuel += pourcentageTiles[k];
@@ -118,7 +117,6 @@ public class StreetGenerator : MonoBehaviour
             tempMap[tempMap.GetLength(0) - 1, i].transform.position = transform.position + new Vector3(positionX / 1.57f, -actualY / 1.57f, 37);
         }
         positionX += map[0, 0].transform.localScale.x;
-        Debug.Log(positionX);
     }
 
     void DestroyUseless()
@@ -174,7 +172,6 @@ public class StreetGenerator : MonoBehaviour
                     {
                         if (randomType >= pourActuel && randomType < fixedPour)
                         {
-                            Debug.Log(k);
                             mapData[i, j] = k + 6;
                         }
                         pourActuel += pourcentageTiles[k];
@@ -308,7 +305,6 @@ public class StreetGenerator : MonoBehaviour
         }
         positionX += 2;
         //positionX += map[0, 0].transform.localScale.x;
-        //Debug.Log(positionX);
     }
 
     void DestroyUseless()
