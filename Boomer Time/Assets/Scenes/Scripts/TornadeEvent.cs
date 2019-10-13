@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TornadeEvent : MonoBehaviour
 {
@@ -8,9 +9,11 @@ public class TornadeEvent : MonoBehaviour
     GameObject[] passifs;
 
     public Animator animator;
+    public Image image;
 
     private void Start()
     {
+        image.enabled = false;
         joueurs = GameObject.FindGameObjectsWithTag("Player");
         passifs = GameObject.FindGameObjectsWithTag("manifPassifs");
         foreach (GameObject player in joueurs)
@@ -24,6 +27,7 @@ public class TornadeEvent : MonoBehaviour
         animator.SetTrigger("ActivateTornado");
 
         StartCoroutine(ActivateOnTimer());
+        StartCoroutine(FadeOut());
     }
 
     private IEnumerator ActivateOnTimer()
@@ -33,6 +37,17 @@ public class TornadeEvent : MonoBehaviour
             yield return new WaitForSeconds(Random.Range(2, 6));
             animator.SetTrigger("EclairIn");
             animator.SetTrigger("Eclair");
+            image.enabled = true;
+        }
+    }
+
+    private IEnumerator FadeOut()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(14.5f);
+            animator.SetTrigger("Toto");
+            image.enabled = false;
         }
     }
 
@@ -49,7 +64,7 @@ public class TornadeEvent : MonoBehaviour
         {
             passif.GetComponent<ManifPassifMvmt>().TornadeInactive();
         }
-        animator.SetTrigger("DeactivateTornado");
+        StopAllCoroutines();
     }
     
 }
