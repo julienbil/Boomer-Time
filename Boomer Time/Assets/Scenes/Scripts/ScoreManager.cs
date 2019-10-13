@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class ScoreManager : MonoBehaviour
@@ -23,6 +24,41 @@ public class ScoreManager : MonoBehaviour
     void Update()
     {
         UpdateScore();
+        if (!startMenu.nbeDeJoueur)
+        {
+            if (SupaDestroya.dead1 && SupaDestroya.dead2)
+            {
+                /*score = scoreP1 + scoreP2;
+                for(int i = 0; i < 10; i++)
+                {
+                    if(score > startMenu.scoreList[i])
+                    {
+                        startMenu.scoreList[i] = score;
+                        i = 10;
+                    }
+                }*/
+                SceneManager.LoadScene("Ending");
+                SupaDestroya.dead1 = false;
+                SupaDestroya.dead2 = false;
+            }
+        }
+        if (startMenu.nbeDeJoueur)
+        {
+            if (SupaDestroya.dead1)
+            {
+               /* score = scoreP1 + scoreP2;
+                for (int i = 0; i < 10; i++)
+                {
+                    if (score > startMenu.scoreList1[i])
+                    {
+                        startMenu.scoreList1[i] = score;
+                        i = 10;
+                    }
+                }*/
+                SceneManager.LoadScene("Ending");
+                SupaDestroya.dead1 = false;
+            }
+        }
     }
 
     public void AddPoints(int player, int nb)
@@ -42,10 +78,18 @@ public class ScoreManager : MonoBehaviour
     void UpdateScore()
     {
         time += Time.deltaTime;
-        timerText.text = time.ToString("F");
+        int m, s, d;
+        m = (int)(time / 60f);
+        s = (int)(time%60);
+        d = (int)(time * 100f);
+        string decimalT = d.ToString();
+        if(decimalT.Length==1)
+            timerText.text = m.ToString() + ":" + s.ToString() + ":" + decimalT[decimalT.Length - 1];
+        else
+            timerText.text = m.ToString() + ":" + s.ToString() + ":" + decimalT[decimalT.Length - 2] + decimalT[decimalT.Length - 1];
 
-        scoreP1 += 10 * Time.deltaTime;
-        scoreP2 += 10 * Time.deltaTime;
+        scoreP1 += 50 * Time.deltaTime;
+        scoreP2 += 50 * Time.deltaTime;
 
         string score1 = ((int)scoreP1).ToString();
         string score1Norm = "";
