@@ -13,7 +13,9 @@ public class PlayerMovement : MonoBehaviour
     public bool driving;
     public bool isStunned;
     public bool cooldown;
+    public bool isBurning;
     public int dashspeed;
+    public Vector2 burningVelo;
     public Vector2 maxVelo;
     public string horizon, verti, a, x;
     bool tornadoIsActive = false;
@@ -31,6 +33,15 @@ public class PlayerMovement : MonoBehaviour
         cooldown = false;
     }
 
+    IEnumerator Burning(float length)
+    {
+        isBurning = true;
+        gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
+        yield return new WaitForSeconds(length);
+        gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+        isBurning = false;
+    }
+
     IEnumerator Stunned(float length)
     {
         isStunned = true;
@@ -42,6 +53,11 @@ public class PlayerMovement : MonoBehaviour
     public void beStunned(float length)
     {
         StartCoroutine(Stunned(length));
+    }
+
+    public void OnFire(float length)
+    {
+        StartCoroutine(Burning(length));
     }
 
     public void Dash()
@@ -84,6 +100,18 @@ public class PlayerMovement : MonoBehaviour
             canMove = false;
         }
 
+        if (isBurning)
+        {
+            canMove = false;
+            gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
+            horizontalSpeed = Mathf.RoundToInt(Input.GetAxis(horizon));
+            verticalSpeed = Mathf.RoundToInt(Input.GetAxis(verti));
+            if (horizontalSpeed != 0 && verticalSpeed != 0)
+                burningVelo = new Vector2(horizontalSpeed, verticalSpeed);
+        }
+
+       
+
         if (canMove)
         {
             horizontalSpeed = Input.GetAxis(horizon);
@@ -101,7 +129,7 @@ public class PlayerMovement : MonoBehaviour
 
         //Vector3 lookDirection = new Vector3(0,0, Input.GetAxisRaw("Vertical") + Input.GetAxisRaw("Horizontal"));
         //transform.rotation = Quaternion.LookRotation(lookDirection);
-        if (Input.GetAxisRaw(verti) + Input.GetAxisRaw(horizon) != 0 && canMove)
+        if ((Input.GetAxisRaw(verti) + Input.GetAxisRaw(horizon) != 0 && canMove) || isBurning)
         {
             if (Input.GetAxis(horizon) == 0)
                 transform.eulerAngles = new Vector3(0, 0, Mathf.Atan(Input.GetAxis(verti) / Input.GetAxis(horizon)) * 360 / (2 * Mathf.PI) - 90);
@@ -110,11 +138,16 @@ public class PlayerMovement : MonoBehaviour
             else if (Input.GetAxis(horizon) < 0)
                 transform.eulerAngles = new Vector3(0, 0, Mathf.Atan(Input.GetAxis(verti) / Input.GetAxis(horizon)) * 360 / (2 * Mathf.PI) + 90);
         }
-            
+
         //Debug.Log(Input.GetAxisRaw("Vertical"));
         //Debug.Log(Input.GetAxisRaw("Horizontal"));
         //Debug.Log(Input.GetAxisRaw("Vertical") / Input.GetAxisRaw("Horizontal"));
         //Debug.Log(Mathf.Atan(Input.GetAxisRaw("Vertical") / Input.GetAxisRaw("Horizontal")) * 360 / (2 * Mathf.PI));
+
+        if (rb.velocity.sqrMagnitude < maxVelo.sqrMagnitude && isBurning && !driving)
+        {
+            rb.AddForce(burningVelo);
+        }
         if (rb.velocity.sqrMagnitude < maxVelo.sqrMagnitude && canMove && !driving)
         {
             rb.AddForce(new Vector2(horizontalSpeed*speed/100, verticalSpeed*speed/100));
