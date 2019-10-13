@@ -93,6 +93,10 @@ public class PlayerMovement : MonoBehaviour
             {
                 gameObject.GetComponent<PlayerWeapon>().hammer.GetComponent<Weapon>().Attack();
             }
+            if (gameObject.GetComponent<PlayerWeapon>().currentWeapon == "TNT")
+            {
+                gameObject.GetComponent<PlayerWeapon>().tnt.GetComponent<Weapon>().Throw();
+            }
         }
 
         if (isStunned)

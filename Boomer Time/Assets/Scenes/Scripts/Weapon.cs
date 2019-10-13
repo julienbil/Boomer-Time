@@ -30,6 +30,20 @@ public class Weapon : MonoBehaviour
         durability--;
     }
 
+    public void Throw()
+    {
+        GameObject dumb = Instantiate(hitbox, player.transform.position, player.transform.rotation);
+        if (player.layer == 9)
+        {
+            dumb.layer = 8;
+        }
+        if (player.layer == 10)
+        {
+            dumb.layer = 11;
+        }
+        durability--;
+    }
+
     // Update is called once per frame
     void Update()
     {

@@ -79,8 +79,8 @@ public class PowerUps : MonoBehaviour
         if (weaponname == "TNT Pup" || weaponname == "TNT Pup(Clone)")
         {
             pWeapon.currentWeapon = "TNT";
-            pWeapon.hammer.GetComponent<Weapon>().durability = 1;
-            pWeapon.hammer.SetActive(true);
+            pWeapon.tnt.GetComponent<Weapon>().durability = 1;
+            pWeapon.tnt.SetActive(true);
         }
     }
 
