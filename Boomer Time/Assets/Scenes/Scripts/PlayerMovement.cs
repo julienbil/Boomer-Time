@@ -125,7 +125,7 @@ public class PlayerMovement : MonoBehaviour
             horizontalSpeed = Input.GetAxis(horizon);
             verticalSpeed = Input.GetAxis(verti);
         }
-        if (canMove && tornadoIsActive)
+        if (canMove && tornadoIsActive && !driving)
         {
             horizontalSpeed = -Input.GetAxis(horizon);
             verticalSpeed = -Input.GetAxis(verti);

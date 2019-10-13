@@ -44,16 +44,6 @@ public class PowerUps : MonoBehaviour
         Destroy(other.gameObject);
     }
 
-    IEnumerator Transforming()
-    {
-        source.Play();
-        Time.timeScale = 0;
-        playmov.canMove = false;
-        yield return new WaitForSecondsRealtime(0.5f);
-        playmov.canMove = true;
-        Time.timeScale = 1;
-    }
-
     void EquipWeapon(string weaponname)
     {
         UnequipWeapon(pWeapon.currentWeapon);
@@ -122,7 +112,6 @@ public class PowerUps : MonoBehaviour
     void TurnIntoLawnmower()
     {
         StopAllCoroutines();
-        StartCoroutine(Transforming());
         gameObject.GetComponent<SpriteRenderer>().sprite = lawnmower;
         TurnIntoBoomer();
         IEnumerator BeLawnmower()
@@ -139,7 +128,6 @@ public class PowerUps : MonoBehaviour
     void TurnIntoTruck()
     {
         StopAllCoroutines();
-        StartCoroutine(Transforming());
         gameObject.GetComponent<SpriteRenderer>().sprite = truck;
         TurnIntoBoomer();
         IEnumerator BeTruck()
