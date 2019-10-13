@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 8749727762391310670}
   - component: {fileID: 8749727762391310671}
   - component: {fileID: 8749727762391310668}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: Meteor
-  m_TagString: Untagged
+  m_TagString: meteor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8749727762391310669}
-  m_LocalRotation: {x: 0.0087277545, y: -0.000018819024, z: 0.0021561405, w: 0.9999596}
+  m_LocalRotation: {x: 0.008726537, y: -0.000018809864, z: 0.0021553915, w: 0.9999596}
   m_LocalPosition: {x: 0, y: 2.4, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 1}
   m_Children: []
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: 21300000, guid: 9bd2cdddc788b55489897544f2fa9a01, type: 3}
+  - {fileID: 21300000, guid: ed8d3a44f86abcd4b8b31b41ee8da0dd, type: 3}
   - {fileID: 3428091596375717421, guid: 4e094f488966cfb4ca084e985f1ac1bf, type: 3}
   sr: {fileID: 8749727762391310671}
   radiusMax: 2
@@ -54,6 +54,7 @@ MonoBehaviour:
   animationSpeed: 20
   radiusSpeed: 2
   col: {fileID: 8749727762391310668}
+  rocks: {fileID: 8285272685387583033, guid: 2d5a5b9cabd363645b71a59e98b33367, type: 3}
 --- !u!212 &8749727762391310671
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -94,7 +95,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 3428091596375717421, guid: 4e094f488966cfb4ca084e985f1ac1bf,
     type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.48235294}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

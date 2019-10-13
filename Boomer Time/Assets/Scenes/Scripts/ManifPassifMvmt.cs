@@ -52,7 +52,7 @@ public class ManifPassifMvmt : MonoBehaviour
 
             if (tornadeIsActive)
             {
-                modifier = new Vector2(Random.Range(-100f, 100f) * 10, Random.Range(-100f, 100f) * 10);
+                modifier = new Vector2(Random.Range(-100f, 100f) * 3, Random.Range(-100f, 100f) * 3);
             }
             else
             {
