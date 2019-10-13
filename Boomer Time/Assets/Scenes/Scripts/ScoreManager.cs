@@ -9,11 +9,21 @@ public class ScoreManager : MonoBehaviour
     public int scoreP2 = 0;
     public Text scoreText1;
     public Text scoreText2;
+    public float time;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        time = Time.time;
+        IEnumerator GainPoints()
+        {
+            scoreP1 += 10;
+            scoreP2 += 10;
+            UpdateScore();
+            yield return new WaitForSeconds(1);
+            StartCoroutine(GainPoints());
+        }
+        StartCoroutine(GainPoints());
     }
 
     // Update is called once per frame

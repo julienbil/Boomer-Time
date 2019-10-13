@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 501454350174107092}
   - component: {fileID: 501454350174107093}
   - component: {fileID: 501454350174107094}
+  - component: {fileID: 2661814526804575499}
   - component: {fileID: 6707670003384463563}
   m_Layer: 0
   m_Name: Torch Pup
@@ -70,7 +71,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 7509860518518112746, guid: a5dca805003ac3e4f970c5483a459ac4,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -109,6 +110,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.12586951, y: 0.323413}
   m_EdgeRadius: 0
+--- !u!114 &2661814526804575499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501454350174107095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1270b722cc70208429b31d478ac81344, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &6707670003384463563
 Animator:
   serializedVersion: 3

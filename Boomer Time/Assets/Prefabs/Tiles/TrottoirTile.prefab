@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4917008520593792305}
   - component: {fileID: 1468817224410764143}
   - component: {fileID: 303638397151505285}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: TrottoirTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}

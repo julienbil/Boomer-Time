@@ -11,7 +11,10 @@ TagManager:
   - Powerup
   - bb hitbox
   - misc
+  - fish
   - meteor
+  - tremblement
+  - cameraHolder
   layers:
   - Default
   - TransparentFX
@@ -26,8 +29,8 @@ TagManager:
   - Player2
   - Weapon2
   - Wall
-  - 
-  - 
+  - Fish
+  - trottoire
   - 
   - 
   - 

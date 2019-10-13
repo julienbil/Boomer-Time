@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3418378216894112255}
   - component: {fileID: 3418378216894112252}
   - component: {fileID: 3418378216894112254}
+  - component: {fileID: 4458060723683257563}
   m_Layer: 0
   m_Name: Lawnmower Pup
   m_TagString: Powerup
@@ -69,7 +70,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: f6e0748b7256c4d45808cf9e12446db8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -97,3 +98,15 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.03537178}
   m_Size: {x: 0.3844244, y: 0.5692564}
   m_Direction: 0
+--- !u!114 &4458060723683257563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3418378216894112253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1270b722cc70208429b31d478ac81344, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
