@@ -24,7 +24,6 @@ public class startMenu : MonoBehaviour
     public EventSystem m_EventSystem;
     private bool ok = false;
     public static bool nbeDeJoueur = false;
-    public GameObject[] images;
 
     void Start()
     {
@@ -32,7 +31,6 @@ public class startMenu : MonoBehaviour
     }
     public void start()
     {
-        for (int i = 0; i < images.Length; i++) { images[i].SetActive(false); }
         startBut.interactable = false;
         instrucBut.interactable = false;
         Hsbut.interactable = false;
@@ -55,7 +53,6 @@ public class startMenu : MonoBehaviour
     }
     public void instructionPath()
     {
-        for (int i = 0; i < images.Length; i++) { images[i].SetActive(false); }
         startBut.interactable = false;
         instrucBut.interactable = false;
         Hsbut.interactable = false;
@@ -67,7 +64,6 @@ public class startMenu : MonoBehaviour
     }
     public void highscore()
     {
-        for (int i = 0; i < images.Length; i++) { images[i].SetActive(false); }
         startBut.interactable = false;
         instrucBut.interactable = false;
         Hsbut.interactable = false;
@@ -83,7 +79,6 @@ public class startMenu : MonoBehaviour
     }
     public void retour()
     {
-        for (int i = 0; i < images.Length; i++) { images[i].SetActive(true); }
         startBut.interactable = true;
         instrucBut.interactable = true;
         Hsbut.interactable = true;
