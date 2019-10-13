@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8079171213902086565
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8079171213902086555}
+  - component: {fileID: 8079171213902086564}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: SoundManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8079171213902086555
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8079171213902086565}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8079171213902086564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8079171213902086565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e18b7636def6ae45aab185db4b6c911, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: baseballhit
+    volume: 0.7
+    audioClip: {fileID: 8300000, guid: 427c8a37892f3f242b003061893973af, type: 3}
+    source: {fileID: 0}
+  - name: collectible
+    volume: 0.7
+    audioClip: {fileID: 8300000, guid: 6eb120867c9a5044e95ea44fe9a18b25, type: 3}
+    source: {fileID: 0}
+  - name: explosion
+    volume: 0.7
+    audioClip: {fileID: 8300000, guid: 627e1481ad06c3c459b6926a35634bcb, type: 3}
+    source: {fileID: 0}
+  - name: grenadelauncher
+    volume: 0.7
+    audioClip: {fileID: 8300000, guid: 7585ac314b82bbd4caf76f674de43bad, type: 3}
+    source: {fileID: 0}
+  - name: hammerhit
+    volume: 0.7
+    audioClip: {fileID: 8300000, guid: d8bc164edb9858842b03d478283ddf99, type: 3}
+    source: {fileID: 0}
+  - name: tonnerre
+    volume: 0.7
+    audioClip: {fileID: 8300000, guid: 7ffc1d290a22ea0449f8543d71ae5bd2, type: 3}
+    source: {fileID: 0}
+  - name: weaponpick
+    volume: 0.7
+    audioClip: {fileID: 8300000, guid: 97291658ededc6f4ba26e26ea2692f8d, type: 3}
+    source: {fileID: 0}

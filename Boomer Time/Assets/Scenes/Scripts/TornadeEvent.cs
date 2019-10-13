@@ -39,6 +39,7 @@ public class TornadeEvent : MonoBehaviour
             animator.SetTrigger("EclairIn");
             animator.SetTrigger("Eclair");
             image.enabled = true;
+            FindObjectOfType<AudioMAnager>().Play("tonnerre");
         }
     }
 
