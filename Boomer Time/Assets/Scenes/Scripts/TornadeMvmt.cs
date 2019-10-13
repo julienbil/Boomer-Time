@@ -10,8 +10,8 @@ public class TornadeMvmt : MonoBehaviour
 
     void Start()
     {
-        transform.position = transform.position + new Vector3(Random.Range(-6f, 6f), yDepart);
-        direction = new Vector2(-this.transform.position.x/100, -this.transform.position.y/100);
+        transform.position = transform.position + new Vector3(Random.Range(0, 6f), yDepart);
+        direction = new Vector2(-this.transform.position.x/100+0.08f, -this.transform.position.y/100);
     }
 
     // Update is called once per frame

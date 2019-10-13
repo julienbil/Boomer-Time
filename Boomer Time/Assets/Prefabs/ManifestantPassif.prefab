@@ -139,6 +139,7 @@ MonoBehaviour:
   force: {x: 0, y: 0}
   xMovement: 10
   xDepart: 0
+  blood: {fileID: 1655711214906056297, guid: b126c7f414f9a514aa0967afb43e35ec, type: 3}
 --- !u!114 &5315372416816574707
 MonoBehaviour:
   m_ObjectHideFlags: 0

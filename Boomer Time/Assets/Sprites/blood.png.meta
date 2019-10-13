@@ -1,16 +1,7 @@
 fileFormatVersion: 2
-guid: a5dca805003ac3e4f970c5483a459ac4
+guid: eaf5751cb83f1b74fa10b2ea049f0698
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 7509860518518112746
-    second: torch_0
-  - first:
-      213: 6717470441782034276
-    second: torch_1
-  - first:
-      213: 5030290666744600015
-    second: torch_2
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -49,7 +40,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -93,70 +84,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: torch_0
-      rect:
-        serializedVersion: 2
-        x: 10
-        y: 0
-        width: 12
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 15febc80bb76d6e4c9378f8432d43863
-      internalID: 7509860518518112746
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: torch_1
-      rect:
-        serializedVersion: 2
-        x: 41
-        y: 0
-        width: 14
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 90eb9f6d63b5f90469d3969f23086c28
-      internalID: 6717470441782034276
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: torch_2
-      rect:
-        serializedVersion: 2
-        x: 73
-        y: 0
-        width: 14
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 574d7b563b51d164ea7534a960da4057
-      internalID: 5030290666744600015
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
