@@ -1,31 +1,31 @@
 fileFormatVersion: 2
-guid: 4459bb5158ce96b45ae3c22a2a42b031
+guid: a80f7ad352368e64fad30715401c2744
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8202063831235961695
-    second: BoomerAnim_0
+      213: 6648087072974667082
+    second: BlackBoomerAnim_0
   - first:
-      213: -4347677933527215038
-    second: BoomerAnim_1
+      213: -5971395029158904713
+    second: BlackBoomerAnim_1
   - first:
-      213: -3281474248743455337
-    second: BoomerAnim_2
+      213: -2977027472487016945
+    second: BlackBoomerAnim_2
   - first:
-      213: 6550040961911342082
-    second: BoomerAnim_3
+      213: 6338877797173884200
+    second: BlackBoomerAnim_3
   - first:
-      213: 5739894270180253157
-    second: BoomerAnim_4
+      213: 689329779639828304
+    second: BlackBoomerAnim_4
   - first:
-      213: 4580188431824947280
-    second: BoomerAnim_5
+      213: -1862144109051535677
+    second: BlackBoomerAnim_5
   - first:
-      213: -1079322833119875869
-    second: BoomerAnim_6
+      213: 6869448713984394303
+    second: BlackBoomerAnim_6
   - first:
-      213: 3713062307272857419
-    second: BoomerAnim_7
+      213: 1335755602056572210
+    second: BlackBoomerAnim_7
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BoomerAnim_0
+      name: BlackBoomerAnim_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 72
-        width: 30
-        height: 23
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 485b0e20bf8326444aa6c1413e9ca378
-      internalID: 8202063831235961695
+      spriteID: eba870325469f0d4785429bbb61a7a3c
+      internalID: 6648087072974667082
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BoomerAnim_1
+      name: BlackBoomerAnim_1
       rect:
         serializedVersion: 2
         x: 32
-        y: 72
-        width: 30
-        height: 23
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e449a2dee86c924fa1fa0ba79d293cf
-      internalID: -4347677933527215038
+      spriteID: 8ef44eb0e00fe9d46a6ac0ce0639df96
+      internalID: -5971395029158904713
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BoomerAnim_2
+      name: BlackBoomerAnim_2
       rect:
         serializedVersion: 2
         x: 64
-        y: 72
-        width: 30
-        height: 23
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f900f765e4b2d8c4188478791cd52e25
-      internalID: -3281474248743455337
+      spriteID: 90df09dbc32d80244b723e619bb0384b
+      internalID: -2977027472487016945
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BoomerAnim_3
+      name: BlackBoomerAnim_3
       rect:
         serializedVersion: 2
         x: 0
-        y: 40
-        width: 30
-        height: 23
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 082852bfcc988b84cb461bd1fa73a32e
-      internalID: 6550040961911342082
+      spriteID: 8951c573cc92761439e2b9cf366b92ef
+      internalID: 6338877797173884200
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BoomerAnim_4
+      name: BlackBoomerAnim_4
       rect:
         serializedVersion: 2
         x: 32
-        y: 40
-        width: 30
-        height: 23
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83c45367b58166a43ae3c5910f808f7f
-      internalID: 5739894270180253157
+      spriteID: cd1b86977c2459f47905e8131d3d1acf
+      internalID: 689329779639828304
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BoomerAnim_5
+      name: BlackBoomerAnim_5
       rect:
         serializedVersion: 2
         x: 64
-        y: 40
-        width: 30
-        height: 23
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +229,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d89abb9b11d61f4f8529b388c1447b5
-      internalID: 4580188431824947280
+      spriteID: 5759e290f558c1146a9122087aca73ee
+      internalID: -1862144109051535677
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BoomerAnim_6
+      name: BlackBoomerAnim_6
       rect:
         serializedVersion: 2
         x: 0
-        y: 8
-        width: 30
-        height: 23
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,20 +250,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 29ae537c9587e624da4e58a14f95ec7a
-      internalID: -1079322833119875869
+      spriteID: 6fa0da77bce150c4882ed9e6397f6700
+      internalID: 6869448713984394303
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BoomerAnim_7
+      name: BlackBoomerAnim_7
       rect:
         serializedVersion: 2
         x: 32
-        y: 8
-        width: 30
-        height: 23
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,8 +271,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: deb5e80905d39da4ab0d57ba6d0a7739
-      internalID: 3713062307272857419
+      spriteID: d58d95a3114dac3468afb311f5aa80d9
+      internalID: 1335755602056572210
       vertices: []
       indices: 
       edges: []
