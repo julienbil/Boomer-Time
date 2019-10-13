@@ -8,6 +8,7 @@ public class SupaDestroya : MonoBehaviour
 {
     public TextMeshProUGUI player1;
     public TextMeshProUGUI player2;
+    public static bool dead1,dead2;
 
     void OnTriggerEnter2D(Collider2D other)
     {
