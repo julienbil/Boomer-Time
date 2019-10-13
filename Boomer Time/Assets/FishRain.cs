@@ -5,9 +5,12 @@ using UnityEngine;
 public class FishRain : MonoBehaviour
 {
     public float enemyCd = 0, enemyLastSpawn = 0;
+    public float rainCD = 2000, rainLastSpawn = 0;
     public int xPosMin =-3, xPosMax=3, yPos=10;
+    public int xRainPosMin = -15, xRainPosMax = 25, yRainPos = 5;
     public Sprite[] fishes;
     public GameObject fish;
+    public GameObject rain;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +40,17 @@ public class FishRain : MonoBehaviour
 
             enemyCd = Random.Range(200, 400)/100f;
             enemyLastSpawn = Time.time;
+        }
+
+        if (Time.time - rainLastSpawn >= rainCD)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                GameObject ol = Instantiate(rain, new Vector3(Random.Range(xRainPosMin, xRainPosMax) + transform.position.x, 10, 0), Quaternion.identity, transform);
+                ol.transform.localScale = new Vector3(3, Random.Range(2, 10), 1);
+                Destroy(ol, 2);
+            }
+            rainLastSpawn = Time.time;
         }
     }
 }

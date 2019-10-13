@@ -133,6 +133,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b5bcfebce383264fb720f76b7873f7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points: 20
+  points: 500
   col: {fileID: 6888315091517619142}
   gm: {fileID: 6305390960324258798, guid: c073825b09130c446bd7b82759a2e6a3, type: 3}
