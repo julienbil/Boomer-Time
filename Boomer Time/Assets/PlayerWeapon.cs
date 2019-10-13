@@ -9,6 +9,7 @@ public class PlayerWeapon : MonoBehaviour
     public GameObject torch;
     public GameObject hammer;
     public GameObject tnt;
+    public GameObject grenadelauncher;
     // Start is called before the first frame update
     void Start()
     {

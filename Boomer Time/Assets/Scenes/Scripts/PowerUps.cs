@@ -82,6 +82,12 @@ public class PowerUps : MonoBehaviour
             pWeapon.tnt.GetComponent<Weapon>().durability = 1;
             pWeapon.tnt.SetActive(true);
         }
+        if (weaponname == "Grenade Launcher Pup" || weaponname == "Grenade Launcher Pup(Clone)")
+        {
+            pWeapon.currentWeapon = "Grenade Launcher";
+            pWeapon.grenadelauncher.GetComponent<Weapon>().durability = 6;
+            pWeapon.grenadelauncher.SetActive(true);
+        }
     }
 
     void UnequipWeapon(string weaponname)
@@ -91,9 +97,25 @@ public class PowerUps : MonoBehaviour
             pWeapon.currentWeapon = "None";
             pWeapon.baseball.SetActive(false);
         }
-        if (weaponname == "None")
+        if (weaponname == "Torch")
         {
-            return;
+            pWeapon.currentWeapon = "None";
+            pWeapon.torch.SetActive(false);
+        }
+        if (weaponname == "Hammer")
+        {
+            pWeapon.currentWeapon = "None";
+            pWeapon.hammer.SetActive(false);
+        }
+        if (weaponname == "TNT")
+        {
+            pWeapon.currentWeapon = "None";
+            pWeapon.tnt.SetActive(false);
+        }
+        if (weaponname == "Grenade Launcher")
+        {
+            pWeapon.currentWeapon = "None";
+            pWeapon.grenadelauncher.SetActive(false);
         }
     }
 

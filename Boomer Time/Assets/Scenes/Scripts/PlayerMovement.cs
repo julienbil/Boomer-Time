@@ -97,6 +97,10 @@ public class PlayerMovement : MonoBehaviour
             {
                 gameObject.GetComponent<PlayerWeapon>().tnt.GetComponent<Weapon>().Throw();
             }
+            if (gameObject.GetComponent<PlayerWeapon>().currentWeapon == "Grenade Launcher")
+            {
+                gameObject.GetComponent<PlayerWeapon>().grenadelauncher.GetComponent<Weapon>().Throw();
+            }
         }
 
         if (isStunned)
