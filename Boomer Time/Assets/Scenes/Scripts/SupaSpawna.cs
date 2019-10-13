@@ -36,14 +36,14 @@ public class SupaSpawna : MonoBehaviour
         if (Time.time - enemyLastSpawn >= enemyCd)
         {
             for (int i = 0; i < Random.Range(enemyMin, enemyMax); i++)
-                Instantiate(enemy, new Vector3(xPos, Random.Range(-3,3), 0), Quaternion.identity);
+                Instantiate(enemy, new Vector3(xPos, Random.Range(minY*100,maxY*100)/100, 0), Quaternion.identity);
             enemyCd = Random.Range(enemyMinCD, enemyMaxCD);
             enemyLastSpawn = Time.time;
         }
         
         if (Time.time - powerUpLastSpawn >= powerUpCd)
         {
-            Instantiate(powerUp[Random.Range(0,powerUp.Length)], new Vector3(xPos, Random.Range(-3, 3), 0), Quaternion.identity);
+            Instantiate(powerUp[Random.Range(0,powerUp.Length)], new Vector3(xPos, Random.Range(-minY, maxY*100) /100, 0), Quaternion.identity);
             powerUpCd = Random.Range(powerUpMinCD, powerUpMaxCD);
             powerUpLastSpawn = Time.time;
         }
