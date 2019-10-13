@@ -1295,7 +1295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43b8c07c466649345b6518155d4beb57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneWidth: 20
+  sceneHeight: 10
 --- !u!81 &982651740
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1331,7 +1331,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.1515837
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1907,7 +1907,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1426714744}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -1978,7 +1978,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f0bad2b20f87a346b6daa5a19d4cb1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: 9bd2cdddc788b55489897544f2fa9a01, type: 3}
+  - {fileID: 3428091596375717421, guid: 4e094f488966cfb4ca084e985f1ac1bf, type: 3}
   sr: {fileID: 1426714746}
+  radiusMax: 2
+  delTime: 7
+  animationSpeed: 20
+  radiusSpeed: 2
+  col: {fileID: 1426714745}
 --- !u!4 &1426714748
 Transform:
   m_ObjectHideFlags: 0
@@ -1988,7 +1996,7 @@ Transform:
   m_GameObject: {fileID: 1426714744}
   m_LocalRotation: {x: 0.0087277545, y: -0.000018819024, z: 0.0021561405, w: 0.9999596}
   m_LocalPosition: {x: 0, y: 2.4, z: 0}
-  m_LocalScale: {x: 4.23, y: 4.23, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 14
