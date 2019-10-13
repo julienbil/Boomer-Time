@@ -45,7 +45,7 @@ public class Weapon : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         if (durability <= 0)
         {
