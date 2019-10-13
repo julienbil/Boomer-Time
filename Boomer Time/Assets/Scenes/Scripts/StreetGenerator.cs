@@ -9,6 +9,7 @@ public class StreetGenerator : MonoBehaviour
     public GameObject[] differentTiles;
 
     public int[] pourcentageTiles;
+    public int[] trottoirPourcentage;
 
     public float startX, startY, xSize, ySize;
 
@@ -68,21 +69,44 @@ public class StreetGenerator : MonoBehaviour
     {
         for (int i = 0; i < tempMapData.GetLength(1); i++)
         {
-            int randomType = Random.Range(1, 100);
-            int pourActuel = 0;
-            int fixedPour = pourcentageTiles[0];
-            for (int k = 0; k < pourcentageTiles.Length; k++)
+            if (i == mapData.GetLength(1) - 1 || i == 0)
             {
-                if (randomType >= pourActuel && randomType < fixedPour)
+                int randomType = Random.Range(1, 100);
+                int pourActuel = 0;
+                int fixedPour = trottoirPourcentage[0];
+                for (int k = 0; k < 4; k++)
                 {
-                    tempMapData[tempMapData.GetLength(0)-1, i] = k;
-                }
-                pourActuel += pourcentageTiles[k];
-                if (fixedPour < 100)
-                {
-                    fixedPour += pourcentageTiles[k + 1];
+                    if (randomType >= pourActuel && randomType < fixedPour)
+                    {
+                        Debug.Log(k);
+                        tempMapData[tempMapData.GetLength(0) - 1, i] = k + 6;
+                    }
+                    pourActuel += pourcentageTiles[k];
+                    if (fixedPour < 100)
+                    {
+                        fixedPour += pourcentageTiles[k + 1];
+                    }
                 }
             }
+            else
+            {
+                int randomType = Random.Range(1, 100);
+                int pourActuel = 0;
+                int fixedPour = pourcentageTiles[0];
+                for (int k = 0; k < pourcentageTiles.Length; k++)
+                {
+                    if (randomType >= pourActuel && randomType < fixedPour)
+                    {
+                        tempMapData[tempMapData.GetLength(0) - 1, i] = k;
+                    }
+                    pourActuel += pourcentageTiles[k];
+                    if (fixedPour < 100)
+                    {
+                        fixedPour += pourcentageTiles[k + 1];
+                    }
+                }
+            }
+            
         }
 
         float actualY = startY;
@@ -142,21 +166,43 @@ public class StreetGenerator : MonoBehaviour
         {
             for (int j = 0; j < mapData.GetLength(1); j++)
             {
-                int randomType = Random.Range(1, 100);
-                int pourActuel = 0;
-                int fixedPour = pourcentageTiles[0];
-                for (int k = 0; k < pourcentageTiles.Length; k++)
-                {
-                    if (randomType >= pourActuel && randomType < fixedPour)
+                if (j == mapData.GetLength(1) - 1 || j == 0){
+                    int randomType = Random.Range(1, 100);
+                    int pourActuel = 0;
+                    int fixedPour = trottoirPourcentage[0];
+                    for (int k = 0; k < 4; k++)
                     {
-                        mapData[i, j] = k;
-                    }
-                    pourActuel += pourcentageTiles[k];
-                    if (fixedPour < 100)
-                    {
-                        fixedPour += pourcentageTiles[k + 1];
+                        if (randomType >= pourActuel && randomType < fixedPour)
+                        {
+                            Debug.Log(k);
+                            mapData[i, j] = k + 6;
+                        }
+                        pourActuel += pourcentageTiles[k];
+                        if (fixedPour < 100)
+                        {
+                            fixedPour += pourcentageTiles[k + 1];
+                        }
                     }
                 }
+                else
+                {
+                    int randomType = Random.Range(1, 100);
+                    int pourActuel = 0;
+                    int fixedPour = pourcentageTiles[0];
+                    for (int k = 0; k < pourcentageTiles.Length; k++)
+                    {
+                        if (randomType >= pourActuel && randomType < fixedPour)
+                        {
+                            mapData[i, j] = k;
+                        }
+                        pourActuel += pourcentageTiles[k];
+                        if (fixedPour < 100)
+                        {
+                            fixedPour += pourcentageTiles[k + 1];
+                        }
+                    }
+                }
+                
             }
         }
     }
