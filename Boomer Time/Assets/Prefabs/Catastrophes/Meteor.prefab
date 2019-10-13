@@ -48,6 +48,7 @@ MonoBehaviour:
   sprites:
   - {fileID: 21300000, guid: ed8d3a44f86abcd4b8b31b41ee8da0dd, type: 3}
   - {fileID: 3428091596375717421, guid: 4e094f488966cfb4ca084e985f1ac1bf, type: 3}
+  - {fileID: 21300000, guid: 601fd596bd92abb4a91eb6f03296de3b, type: 3}
   sr: {fileID: 8749727762391310671}
   radiusMax: 2
   delTime: 7

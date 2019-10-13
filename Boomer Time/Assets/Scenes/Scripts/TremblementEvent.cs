@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class TremblementEvent : MonoBehaviour
 {
-    public GameObject cameraHolder;
+    GameObject cameraHolder;
 
     // Start is called before the first frame update
     void Start()
     {
+        cameraHolder = GameObject.FindGameObjectWithTag("cameraHolder");
         cameraHolder.GetComponent<Scroll>().ActivateShake();
     }
 
