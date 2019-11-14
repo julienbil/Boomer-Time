@@ -166,15 +166,18 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.AddForce(new Vector2(horizontalSpeed*speed/100, verticalSpeed*speed/100));
         }
-        if (rb.velocity.sqrMagnitude < maxVelo.sqrMagnitude && canMove && driving)
-        {
-            rb.transform.position = rb.transform.position + new Vector3(horizontalSpeed * speed / 100, verticalSpeed * speed / 100, 0);
-        }
 
 
 
     }
 
+    public void FixedUpdate()
+    {
+        if (rb.velocity.sqrMagnitude < maxVelo.sqrMagnitude && canMove && driving)
+        {
+            rb.transform.position = rb.transform.position + new Vector3(horizontalSpeed * speed / 100, verticalSpeed * speed / 100, 0);
+        }
+    }
 
     public void ActivateTornado()
     {

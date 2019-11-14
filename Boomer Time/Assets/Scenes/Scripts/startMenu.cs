@@ -158,7 +158,7 @@ public class startMenu : MonoBehaviour
                 break;
             case 2:
                 nbeDeJoueur = false;
-                SceneManager.LoadScene("Street2P");
+                SceneManager.LoadScene("Scene2P");
                 break;
 
         }

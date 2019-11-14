@@ -30,7 +30,7 @@ public class Scroll : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (speed < 1.15f)
             speed = 0.4f + Mathf.Pow(++variation, 1 / divider) / 100;

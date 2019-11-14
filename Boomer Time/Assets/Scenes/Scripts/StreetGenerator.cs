@@ -36,7 +36,7 @@ public class StreetGenerator : MonoBehaviour
         StartCoroutine(ActivateOnTimer());
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (speed > 1.10f)
             speed = timer - (Mathf.Pow(++variation, 1 / divider) / 20);

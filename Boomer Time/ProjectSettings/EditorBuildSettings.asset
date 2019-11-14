@@ -12,9 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/FINAL SCENE/Street1P.unity
     guid: 2ba1a65a3ba088e449f2fe12958e5208
   - enabled: 1
-    path: Assets/Scenes/FINAL SCENE/Scene2P.unity
-    guid: db330928b861e034faae134f8779aee8
-  - enabled: 1
     path: Assets/Scenes/FINAL SCENE/Ending.unity
     guid: 1f3d4425200a3f8428d000c82d56ee8a
+  - enabled: 1
+    path: Assets/Scenes/FINAL SCENE/Scene2P.unity
+    guid: db330928b861e034faae134f8779aee8
   m_configObjects: {}

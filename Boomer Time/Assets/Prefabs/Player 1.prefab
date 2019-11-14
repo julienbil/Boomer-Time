@@ -418,7 +418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9f7fc5fc8e70a748971c9ed30f19881, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 100
+  speed: 75
   rb: {fileID: 7367321147222434812}
   horizontalSpeed: 0
   verticalSpeed: 0
@@ -430,7 +430,7 @@ MonoBehaviour:
   isBurning: 0
   dashspeed: 4
   burningVelo: {x: 0, y: 0}
-  maxVelo: {x: 2, y: 2}
+  maxVelo: {x: 3, y: 3}
   horizon: Horizontal1
   verti: Vertical1
   a: A1
@@ -472,7 +472,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad774acf1541c3b4483ea049923501f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  player1: {fileID: 0}
+  player2: {fileID: 0}
 --- !u!114 &6639943420286145867
 MonoBehaviour:
   m_ObjectHideFlags: 0

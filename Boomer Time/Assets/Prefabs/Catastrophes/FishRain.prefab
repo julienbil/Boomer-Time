@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyCd: 0
   enemyLastSpawn: 0
-  rainCD: 0
+  rainCD: 0.5
   rainLastSpawn: 0
   xPosMin: -3
   xPosMax: 3

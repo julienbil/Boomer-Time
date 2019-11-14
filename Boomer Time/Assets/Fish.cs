@@ -21,7 +21,7 @@ public class Fish : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         rb.AddForce(direction);
         transform.eulerAngles += new Vector3(0, 0, 360*Time.deltaTime);
