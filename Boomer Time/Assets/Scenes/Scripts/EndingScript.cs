@@ -13,7 +13,7 @@ public class EndingScript : MonoBehaviour
     string nomString = "";
     char[] nom= { 'A','A','A' };
     int lettreI=0;
-    bool nametime = false;
+    bool nametime = false, reset = true;
 
     private void Start()
     {
@@ -34,7 +34,9 @@ public class EndingScript : MonoBehaviour
         {
             if (lettreI < 3)
             {
-                if (Input.GetAxis("Vertical") > 0.5f) //Input.GetAxis("Vertical") > 0.5f
+                if (!reset && Input.GetAxis("Vertical") < 0.5f && Input.GetAxis("Vertical") > -0.5f)
+                    reset = true;
+                if (reset && Input.GetAxis("Vertical") > 0.5f) //Input.GetAxis("Vertical") > 0.5f
                 {
                     if (nom[lettreI] <= 65)
                     {
@@ -45,8 +47,9 @@ public class EndingScript : MonoBehaviour
                     opname.text = "";
                     for (int i = 0; i < lettreI + 1; i++)
                         opname.text += nom[i];
+                    reset = false;
                 }
-                if (Input.GetAxis("Vertical") < -0.5f) //Input.GetAxis("Vertical") > -0.5f
+                if (reset && Input.GetAxis("Vertical") < -0.5f) //Input.GetAxis("Vertical") > -0.5f
                 {
                     if (nom[lettreI] >= 90)
                     {
@@ -57,8 +60,9 @@ public class EndingScript : MonoBehaviour
                     opname.text = "";
                     for (int i = 0; i < lettreI + 1; i++)
                         opname.text += nom[i];
+                    reset = false;
                 }
-                if (Input.GetButtonDown("B1")) //Input.GetButtonDown("B1")
+                if (Input.GetButtonDown("A1")) //Input.GetButtonDown("B1")
                 {
                     nomString+= nom[lettreI];
                     lettreI++;
