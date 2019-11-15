@@ -21,16 +21,14 @@ public class startMenu : MonoBehaviour
     public Button nextBut;
     public Button useless;
     public Button controlleBut;
-    public GameObject but1PlayerHS;
-    public GameObject but2PlayerHS;
     public GameObject but1Player;
     public GameObject but2Player;
     private Scene scene;
     public EventSystem m_EventSystem;
     private bool ok = false;
     public static bool nbeDeJoueur = false;
-    public string number,name,score,highscoreBoard, number1, name1, score1, highscoreBoard1;
-    public int scoreTemp,scoreTemp1;
+    public string name,highscoreBoard, number1, name1, score1, highscoreBoard1;
+    public int number, score, scoreTemp,scoreTemp1;
     public TextMeshProUGUI highScoreBoard;
     public TextMeshProUGUI highScoreBoard1;
    /* public static List<int> scoreList = new List<int>();
@@ -42,7 +40,28 @@ public class startMenu : MonoBehaviour
 
     void Start()
     {
-            TextAsset textCVS = Resources.Load<TextAsset>("highscoreFile");
+        HighscoreManager.Load();
+        Highscore highscore1 = HighscoreManager.highscore1P;
+        Highscore highscore2 = HighscoreManager.highscore2P;
+        for (int i = 0; i < highscore1.score.Length; i++)
+        {
+            number = i + 1;
+            name = highscore1.nom[i];
+            score = highscore1.score[i];
+            highscoreBoard = (number + "\t" + name + "\t" + score);
+            highScoreBoard.text = (highScoreBoard.text + "\n " + highscoreBoard);
+        }
+        for (int i = 0; i < highscore2.score.Length; i++)
+        {
+            number = i + 1;
+            name = highscore2.nom[i];
+            score = highscore2.score[i];
+            highscoreBoard1 = (number + "\t" + name + "\t" + score);
+            highScoreBoard1.text = (highScoreBoard1.text + "\n " + highscoreBoard1);
+        }
+
+        /*
+        TextAsset textCVS = Resources.Load<TextAsset>("highscoreFile");
             string[] data = textCVS.text.Split(new char[] { '\n' });
 
             for (int i = 1; i < data.Length - 1; i++)
@@ -73,7 +92,7 @@ public class startMenu : MonoBehaviour
         }
         
         m_EventSystem = EventSystem.current;
-        
+        */
     }
     public void start()
     {
@@ -108,8 +127,6 @@ public class startMenu : MonoBehaviour
     }
     public void highscore()
     {
-        but1PlayerHS.SetActive(true);
-        but2PlayerHS.SetActive(true);
         startBut.interactable = false;
         instrucBut.interactable = false;
         Hsbut.interactable = false;
@@ -117,7 +134,6 @@ public class startMenu : MonoBehaviour
         ok = true;
         retourButton.SetActive(true);
         panHs.SetActive(true);
-        m_EventSystem.SetSelectedGameObject(but1PlayerHS);
     }
     public void quitter()
     {
@@ -164,18 +180,6 @@ public class startMenu : MonoBehaviour
         }
         
     }
-    public void hs1Player()
-    {
-        highScoreBoard.gameObject.SetActive(true);
-        but1PlayerHS.SetActive(false);
-        but2PlayerHS.SetActive(false);
-    }
-    public void hs2Player()
-    {
-        highScoreBoard1.gameObject.SetActive(true);
-        but1PlayerHS.SetActive(false);
-        but2PlayerHS.SetActive(false);
-    }
     public void next()
     {
         controllerPan.SetActive(true);
@@ -185,5 +189,4 @@ public class startMenu : MonoBehaviour
         quitBut.interactable = false;
         m_EventSystem.SetSelectedGameObject(useless.gameObject);
     }
-    
 }
