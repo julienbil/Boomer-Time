@@ -3412,7 +3412,7 @@ MonoBehaviour:
   endAngle: 15
   angle: 0
   right: 1
-  speed: 0.3
+  speed: 60
 --- !u!1 &467315465
 GameObject:
   m_ObjectHideFlags: 0
@@ -4986,7 +4986,7 @@ MonoBehaviour:
   endAngle: 15
   angle: 0
   right: 1
-  speed: 0.3
+  speed: 60
 --- !u!1 &730058870
 GameObject:
   m_ObjectHideFlags: 0
@@ -6946,7 +6946,7 @@ MonoBehaviour:
   endAngle: 15
   angle: 0
   right: 1
-  speed: 0.3
+  speed: 60
 --- !u!114 &1345012390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8743,7 +8743,7 @@ MonoBehaviour:
   endAngle: 15
   angle: 0
   right: 1
-  speed: 0.3
+  speed: 60
 --- !u!114 &1956810252
 MonoBehaviour:
   m_ObjectHideFlags: 0

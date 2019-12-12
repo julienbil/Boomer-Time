@@ -65,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
         if (canMove && !dashing && !driving)
         {
             StartCoroutine(DashCooldown());
-            rb.velocity += new Vector2(dashspeed * rb.velocity.x, dashspeed * rb.velocity.y);
+            rb.velocity += new Vector2(Time.deltaTime*dashspeed * rb.velocity.x, Time.deltaTime * dashspeed * rb.velocity.y);
 
             IEnumerator DashCooldown()
             {
@@ -160,11 +160,11 @@ public class PlayerMovement : MonoBehaviour
 
         if (rb.velocity.sqrMagnitude < maxVelo.sqrMagnitude && isBurning && !driving)
         {
-            rb.AddForce(burningVelo*2);
+            rb.AddForce(Time.deltaTime * burningVelo *2);
         }
         if (rb.velocity.sqrMagnitude < maxVelo.sqrMagnitude && canMove && !driving)
         {
-            rb.AddForce(new Vector2(horizontalSpeed*speed/100, verticalSpeed*speed/100));
+            rb.AddForce(new Vector2(Time.deltaTime * horizontalSpeed *speed, Time.deltaTime * verticalSpeed *speed));
         }
 
 
@@ -175,7 +175,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (rb.velocity.sqrMagnitude < maxVelo.sqrMagnitude && canMove && driving)
         {
-            rb.transform.position = rb.transform.position + new Vector3(horizontalSpeed * speed / 100, verticalSpeed * speed / 100, 0);
+            rb.transform.position += new Vector3(Time.deltaTime * horizontalSpeed * speed, Time.deltaTime * verticalSpeed * speed, 0);
         }
     }
 

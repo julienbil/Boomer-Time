@@ -19,13 +19,13 @@ public class MenuMove : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (right)
         {
             if (angle < endAngle)
             {
-                angle += 1 * (float)speed;
+                angle += 1 * (float)speed*Time.deltaTime;
                 img.transform.eulerAngles = new Vector3(0, 0, angle);
             }
             else
@@ -37,7 +37,7 @@ public class MenuMove : MonoBehaviour
         {
             if (angle > startAngle)
             {
-                angle -= 1 * (float)speed;
+                angle -= 1 * (float)speed * Time.deltaTime;
                 img.transform.eulerAngles = new Vector3(0, 0, angle);
             }
             else

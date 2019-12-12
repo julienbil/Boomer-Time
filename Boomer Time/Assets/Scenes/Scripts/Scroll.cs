@@ -42,14 +42,14 @@ public class Scroll : MonoBehaviour
         {
             if (signe)
             {
-                rotate += rotateSpeed;
+                rotate += Time.deltaTime * rotateSpeed;
                 camera.transform.eulerAngles = new Vector3(0, 0, rotate);
                 if (rotate >= 10)
                     signe = false;
             }
             else if(!signe)
             {
-                rotate -= rotateSpeed;
+                rotate -= Time.deltaTime * rotateSpeed;
                 camera.transform.eulerAngles = new Vector3(0, 0, rotate);
                 if (rotate <= -10)
                     signe = true;
