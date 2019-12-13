@@ -418,7 +418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9f7fc5fc8e70a748971c9ed30f19881, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 75
+  speed: 100
   rb: {fileID: 7367321147222434812}
   horizontalSpeed: 0
   verticalSpeed: 0
@@ -428,7 +428,7 @@ MonoBehaviour:
   isStunned: 0
   cooldown: 0
   isBurning: 0
-  dashspeed: 4
+  dashspeed: 35
   burningVelo: {x: 0, y: 0}
   maxVelo: {x: 3, y: 3}
   horizon: Horizontal1

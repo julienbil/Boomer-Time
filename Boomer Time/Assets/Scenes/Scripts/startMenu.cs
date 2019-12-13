@@ -14,6 +14,9 @@ public class startMenu : MonoBehaviour
     public GameObject choixNbeJoueurs;
     public GameObject panHs;
     public GameObject controllerPan;
+    public GameObject creditsPan;
+    public GameObject mainPan;
+    public Button goBackBut;
     public Button startBut;
     public Button instrucBut;
     public Button Hsbut;
@@ -125,6 +128,12 @@ public class startMenu : MonoBehaviour
         retourButton.SetActive(true);
         m_EventSystem.SetSelectedGameObject(nextBut.gameObject);
     }
+
+    public void credits()
+    {
+        m_EventSystem.SetSelectedGameObject(goBackBut.gameObject);
+    }
+
     public void highscore()
     {
         startBut.interactable = false;
@@ -141,12 +150,14 @@ public class startMenu : MonoBehaviour
     }
     public void retour()
     {
+        mainPan.SetActive(true);
         highScoreBoard.gameObject.SetActive(false);
         highScoreBoard1.gameObject.SetActive(false);
         startBut.interactable = true;
         instrucBut.interactable = true;
         Hsbut.interactable = true;
         quitBut.interactable = true;
+        creditsPan.SetActive(false);
         instructionPan.SetActive(false);
         retourButton.SetActive(false);
         panHs.SetActive(false);

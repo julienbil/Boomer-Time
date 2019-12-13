@@ -65,12 +65,12 @@ public class PlayerMovement : MonoBehaviour
         if (canMove && !dashing && !driving)
         {
             StartCoroutine(DashCooldown());
-            rb.velocity += new Vector2(Time.deltaTime*dashspeed * rb.velocity.x, Time.deltaTime * dashspeed * rb.velocity.y);
+            rb.AddForce(new Vector2(dashspeed * rb.velocity.x, dashspeed * rb.velocity.y));
 
             IEnumerator DashCooldown()
             {
                 dashing = true;
-                yield return new WaitForSeconds(0.4f);
+                yield return new WaitForSeconds(0.6f);
                 dashing = false;
             }
         }
