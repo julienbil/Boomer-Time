@@ -131,6 +131,7 @@ public class startMenu : MonoBehaviour
 
     public void credits()
     {
+        ok = true;
         m_EventSystem.SetSelectedGameObject(goBackBut.gameObject);
     }
 
